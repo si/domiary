@@ -1,14 +1,14 @@
 <!-- File: domains/view.ctp -->
 <article>
   <h1><?php echo $domain['Domain']['domain_name']?></h1>
-  <p>Expires in <strong><?php echo floor((strtotime($domain['Domain']['expiry']) - mktime())/3600/24) . ' days'; ?></strong> <small>(<?php echo $time->nice($domain['Domain']['expiry'])?>)</small></p>
+  <p>Expires in <strong><?php echo floor((strtotime($domain['Domain']['expiry']) - mktime())/3600/24) . ' days'; ?></strong> on <?php echo $time->nice($domain['Domain']['expiry'])?>)</p>
   <h2>Domain Information</h2>
   <table>
     <tbody>
       <tr><th>Registered</th><td><?php echo $time->nice($domain['Domain']['registered']); ?></td></tr>
-      <tr><th>By</th><td><?php echo $whois['regrinfo']['owner']['name'] . ((isset($whois['regrinfo']['owner']['organization']) && $whois['regrinfo']['owner']['organization']!='') ? ' (' . $whois['regrinfo']['owner']['organization'] . ')' : ''); ?></td></tr>
-      <tr><th>Email</th><td><?php echo $whois['regrinfo']['admin']['email']?></td></tr>
-      <tr><th>Telephone</th><td><?php echo $whois['regrinfo']['admin']['phone']?></td></tr>
+      <tr><th>By</th><td><?php echo ((isset($whois['regrinfo']['owner']['name'])) ? $whois['regrinfo']['owner']['name'] : '') . ((isset($whois['regrinfo']['owner']['organization']) && $whois['regrinfo']['owner']['organization']!='') ? ' (' . $whois['regrinfo']['owner']['organization'] . ')' : ''); ?></td></tr>
+      <tr><th>Email</th><td><?php echo (isset($whois['regrinfo']['admin']['email'])) ? $whois['regrinfo']['admin']['email'] : ''; ?></td></tr>
+      <tr><th>Telephone</th><td><?php echo isset($whois['regrinfo']['admin']['phone']) ? $whois['regrinfo']['admin']['phone'] : ''; ?></td></tr>
       <tr><th>Added</th><td><?php echo $time->nice($domain['Domain']['created'])?></td></tr>
       <tr><th>Registrar</th><td><?php echo '<a href="'. $whois['regyinfo']['referrer'] . '">' .$whois['regyinfo']['registrar'] .'</a>'; ?></td></tr>
     </tbody>
