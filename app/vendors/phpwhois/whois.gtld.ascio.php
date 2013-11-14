@@ -50,9 +50,9 @@ class ascio_handler
 		            );
 
 		$r = get_blocks($data_str, $items, true);
-		$r['owner'] = get_contact($r['owner']);
-		$r['admin'] = get_contact($r['admin']);
-		$r['tech'] = get_contact($r['tech']);
+		$r['owner'] = (isset($r['owner'])) ? get_contact($r['owner']) : '';
+		$r['admin'] = (isset($r['admin'])) ? get_contact($r['admin']) : '';
+		$r['tech'] = (isset($r['tech'])) ? get_contact($r['tech']) : '';
 		format_dates($r, 'ymd');
 		return ($r);
 		}
