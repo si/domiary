@@ -32,8 +32,8 @@
   		<td><abbr title="<?php echo date('c',strtotime($domain['Domain']['expiry'])); ?>" class="dtstart"><?php echo floor((strtotime($domain['Domain']['expiry']) - mktime())/3600/24) . ' days'; ?></abbr></td>
   		<td>
   		  <ul class="actions">
-  		    <li><?php echo $html->link('Refresh', array('action' => 'refresh', 'id' => $domain['Domain']['id']))?></li>
-  		    <li><?php echo $html->link('Edit', array('action' => 'edit', 'id' => $domain['Domain']['id']))?></li>
+  		    <li><?php echo $html->link('Refresh', array('action' => 'refresh', $domain['Domain']['id']))?></li>
+  		    <li><?php echo $html->link('Edit', array('action' => 'edit', $domain['Domain']['id']))?></li>
   		    <li><?php echo $html->link('Delete', array('action' => 'delete', $domain['Domain']['id']), null, 'Are you sure?' )?></li>
   		  </ul>
   		</td>
