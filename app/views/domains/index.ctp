@@ -34,7 +34,7 @@
   		  <ul class="actions">
   		    <li><?php echo $html->link('Refresh', array('action' => 'refresh', 'id' => $domain['Domain']['id']))?></li>
   		    <li><?php echo $html->link('Edit', array('action' => 'edit', 'id' => $domain['Domain']['id']))?></li>
-  		    <li><?php echo $html->link('Delete', array('action' => 'delete', 'id' => $domain['Domain']['id']), null, 'Are you sure?' )?></li>
+  		    <li><?php echo $html->link('Delete', array('action' => 'delete', $domain['Domain']['id']), null, 'Are you sure?' )?></li>
   		  </ul>
   		</td>
   	</tr>

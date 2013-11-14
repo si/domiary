@@ -37,12 +37,9 @@ class DomainsController extends AppController
 		
 		$domain = $this->Domain->read();
 
-    $whois = $this->Whois->lookup($domain['Domain']['domain_name']);	    
-    $admin = $whois['regrinfo']['admin'];
-    $owner = $whois['regrinfo']['owner'];
+    $whois = $this->Whois->lookup($domain['Domain']['domain_name']);
     
-    
-		$this->set(compact('domain','admin','owner','whois'));
+		$this->set(compact('domain','whois'));
 	}
 
 	function add() {
@@ -83,7 +80,7 @@ class DomainsController extends AppController
 		$this->Domain->id = $id;
 		$domain = $this->Domain->read();
 
-    $this->Domain->del($id);
+    $this->Domain->delete($id);
   	$this->flash($domain['Domain']['domain_name'] . ' deleted', '/domains');
   }
   
