@@ -20,7 +20,7 @@ class User extends AppModel {
 
         var $validate = array(
             'name'=>array(
-                          'rule'=>array('minLength', 4),
+                          'rule'=>array('minLength', 2),
                           'message'=>'Name has to be at least four characters'),
 
             'email'=>array(
@@ -29,7 +29,7 @@ class User extends AppModel {
 
             'username'=>array(
                               'Username has to be at least four characters'=>array(
-                                  'rule'=>array('minLength', 4)
+                                  'rule'=>array('minLength', 2)
                               ),
                               'This username is already taken, please try another'=>array(
                                   'rule'=>'isUnique'
