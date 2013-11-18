@@ -21,17 +21,17 @@ X-MICROSOFT-CDO-BUSYSTATUS:FREE
 ';
 
     if(isset($reminder_value) && isset($reminder_unit)){
-        $reminderDate = '-P';
+        $reminder_date = '-P';
     //      	          P15DT5H0M20S
         switch($reminder_unit){
-            default: case 'H': case 'M': case 'S': $reminderDate .= 'T'.(int)$reminder_value.$reminder_unit; break;
-            case 'D': $reminderDate .= (int)$reminder_value.$reminder_unit; break;
+            default: case 'H': case 'M': case 'S': $reminder_date .= 'T'.(int)$reminder_value.$reminder_unit; break;
+            case 'D': $reminder_date .= (int)$reminder_value.$reminder_unit; break;
         }
         
         echo 'BEGIN:VALARM'."\n";
         echo 'ACTION:DISPLAY'."\n";
         echo 'DESCRIPTION:REMINDER'."\n";
-        echo 'TRIGGER;RELATED=START:'.$reminderDate."\n";
+        echo 'TRIGGER;RELATED=START:'.$reminder_date."\n";
         echo 'END:VALARM'."\n";
     }
 
