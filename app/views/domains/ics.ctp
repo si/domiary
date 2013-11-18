@@ -18,7 +18,24 @@ DTSTAMP:' . $time->format('Ymd\This\Z',$domain['Domain']['expiry']) . '
 CLASS:PUBLIC
 STATUS:FREE
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
-END:VEVENT
+';
+
+    if(isset($reminder_value) && isset($reminder_unit)){
+        $reminderDate = '-P';
+    //      	          P15DT5H0M20S
+        switch($reminder_unit){
+            default: case 'H': case 'M': case 'S': $reminderDate .= 'T'.(int)$reminder_value.$reminder_unit; break;
+            case 'D': $reminderDate .= (int)$reminder_value.$reminder_unit; break;
+        }
+        
+        echo 'BEGIN:VALARM'."\n";
+        echo 'ACTION:DISPLAY'."\n";
+        echo 'DESCRIPTION:REMINDER'."\n";
+        echo 'TRIGGER;RELATED=START:'.$reminderDate."\n";
+        echo 'END:VALARM'."\n";
+    }
+
+    echo 'END:VEVENT
 ';
 
   } // loop domains

@@ -130,10 +130,20 @@ class DomainsController extends AppController
         )
       );
       $this->set('domains',$domains);
+      
+      $this->set('reminder_value',1);
+      $this->set('reminder_unit','D');
+    
+
+      
     } else {
       $this->set('error','Unique key not specified');
     }
 
+  }
+  
+  function renew($id) {
+    $redirect = 'http://affiliate.godaddy.com/redirect/DD08025088754A6397FB89B0B56E5B21FEF5952E7B83CF35DB61C67ED8FF8F6BCB40B0DBE45FA8FA74DC2D5844CB321A';
   }
   
 }
