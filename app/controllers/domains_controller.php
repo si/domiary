@@ -93,9 +93,21 @@ class DomainsController extends AppController
 		
 
     		$whois_data = $this->Whois->lookup($domain['Domain']['domain_name']);
-
-    		$domain['Domain']['registered'] = $whois_data['regrinfo']['domain']['created'];
-    		$domain['Domain']['expiry'] = $whois_data['regrinfo']['domain']['expires'];
+    		
+        if(isset($whois_data['regrinfo']['domain']['created'])) {
+      		$domain['Domain']['registered'] = $whois_data['regrinfo']['domain']['created'];
+        }
+        if(isset($whois_data['regrinfo']['domain']['expires'])) {
+      		$domain['Domain']['expiry'] = $whois_data['regrinfo']['domain']['expires'];
+        }
+        
+        // Loop through raw data to find expiry date
+        foreach($whois_data['rawdata'] as $line) {
+          if( strpos($line,'Expiry date') !== false) {
+            $expiry_date = str_replace('Expiry date: ', '', $line);
+            $domain['Domain']['expiry'] = date('Y-m-d',strtotime($expiry_date));
+          }
+        }
 
   		
 			if ($this->Domain->save($domain)) {
