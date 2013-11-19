@@ -24,7 +24,7 @@
   <link rel="stylesheet" media="handheld" href="/css/handheld.css?v=2">
   <script src="/js/libs/modernizr-1.6.min.js"></script>
 </head>
-  <body>
+  <body class="<?php echo $this->params['controller'] . ' ' . $this->params['action']; ?>">
   <div id="container">
     <header>
       <a href="/">Domiary</a>
