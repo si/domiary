@@ -226,8 +226,14 @@ button {  width: auto; overflow: visible; }
 
 
 body {
+  background: fixed #000 url(/img/bokeh.jpg) no-repeat 0 0;
+  background-size: cover;
   font-family: 'Helvetica Neue',Helvetica, Arial, sans-serif;
   text-align: center;
+}
+a:link,
+a:visited {
+  color: #FFF;
 }
 
 #container {
@@ -262,16 +268,39 @@ header a:focus {
   border-radius: 40px;
 }
 nav {
-  border-bottom: 1px solid #CCC;
+  background: rgba(0,0,0,0.5);
+  border-bottom: 3px solid rgba(0,0,0,0.2);
+  font-weight: bold;
+  text-transform: uppercase;
 }
 nav ul {
   list-style: none;
+  margin: 0;
   overflow: hidden;
+  padding: 0;
 }
 nav li {
   float: left;
-  margin: 5px;
+  margin: 0;
+  padding: 0;
 }
+nav li a:link,
+nav li a:visited {
+  color: rgba(255,255,255,0.8);
+  display: inline-block;
+  padding: 15px;
+  text-decoration: none;
+}
+nav li a:hover,
+nav li a:focus {
+  color: rgba(255,255,255,1);
+  background: rgba(255,255,255,0.1);
+}
+nav li a.current {
+  background: rgba(40,240,70,0.7);
+}
+
+
 
 #content {
   margin: 10px 0;
@@ -301,11 +330,14 @@ tfoot th {
   text-transform: uppercase;
 }
 thead th {
-  border-bottom: 2px solid #CCC;
+  border-bottom: 2px solid rgba(255,255,255,0.3);
 }
 tfoot th {
-  border-top: 2px solid #CCC;
-
+  border-top: 2px solid rgba(255,255,255,0.3);
+}
+tbody tr {
+  background: rgba(0,0,0,0.2);
+  margin-bottom: 2px;
 }
 
 article {
@@ -336,21 +368,19 @@ ul.actions li {
 }
 a.cta {
   display: block;
-  background: #333;
-  color: #CCC;
+  background: rgba(255,190,30,0.8);
+  color: #FFF;
   font-weight: bold;
   text-decoration: none;
   text-transform: uppercase;
   text-align: center;
   padding: 10px;
   margin: 0 0 5px;
-  -webkit-border-radius: 10px;
-  -webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
 }
 a.cta:hover,
 a.cta:active,
 a.cta:focus {
-  background: #000;
+  background: rgba(255,190,30,1);
   color: #FFF;
 }
 a.large {
@@ -362,35 +392,76 @@ a.large {
 }
 
 fieldset {
-  border: 3px solid #EEE;
+  border: 3px solid rgba(255,255,255,0.3);
   border-width: 3px 0;
   padding: 10px 0;
+  text-align: center;
 }
 legend {
-  text-align: center;
-  color: #CCC;
+  color: rgba(255,255,255,0.3);
   text-transform: uppercase;
-  background: #FFF;
+  background: transparent;
   padding: 5px;
-}
-label,
-input,
-select,
-textarea {
-  display: block;
+  text-align: center;
 }
 label {
-  color: #999;
+  color: rgba(255,255,255,0.7);
+  display: block;
   text-transform: uppercase;
   font-size: 10px;
   font-weight: bold;
   margin: 0 0 5px;
 }
+
 input,
 select,
 textarea {
-  margin: 0 0 10px;
+  background: rgba(255,255,255,0.8);
+  border: none;
+  display: inline-block;
+  font-size: 1.5em;
+  margin: 0 auto 1em;
+  padding: 0.5em;
+  text-align: center;
+  width: 15em;  
 }
+input:focus,
+select:focus,
+textarea:focus {
+  background: rgba(255,255,255,0.9);
+
+}
+
+input[type=submit], button {
+  background: rgba(240,163,29,0.8);
+  color: rgba(255,255,255,0.8);
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  text-transform: uppercase;
+  width: 20em;  
+}
+
+fieldset ul {
+  list-style: none;
+}
+
+.input {
+  position: relative;
+}
+
+.error-message {
+  background: rgba(240,30,0,0.5);
+  color: #FFF;
+  display: block;
+  padding: 0.5em;
+  position: absolute;
+  top: 2em;
+  left: 65%;
+  width: 12em;
+  font-size: 0.8em; 
+}
+
 
 .debug {
   width: 100%;
