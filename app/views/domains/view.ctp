@@ -53,7 +53,13 @@
   </ul>
 </aside>
 
-<p><?php echo $html->link('Back to list', array('controller' => 'domains', 'action' => 'index'))?></p>
+<ul>
+  <li><?php echo $html->link('Refresh Details', array('controller' => 'domains', 'action' => 'refresh', $domain['Domain']['id']))?></li>
+  <li><?php echo $html->link('Edit Domain', array('controller' => 'domains', 'action' => 'edit', $domain['Domain']['id']))?></li>
+  <li><?php echo $html->link('Delete Domain', array('controller' => 'domains', 'action' => 'delete', $domain['Domain']['id']),null,'Are you sure you want to remove this domain or just archive it?')?></li>
+  <li><?php echo $html->link('Back to list', array('controller' => 'domains', 'action' => 'index'))?></li>
+  
+</ul>
 
 <textarea class="debug" id="domain_detail">
 <?php var_dump($domain); ?>
