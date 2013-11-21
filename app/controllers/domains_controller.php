@@ -33,12 +33,14 @@ class DomainsController extends AppController
   }
 
 	function view($id = null) {
+	
 		$this->Domain->id = $id;
 		
 		$domain = $this->Domain->read();
 
-    $whois = $this->Whois->lookup($domain['Domain']['domain_name']);
-    
+//    $whois = $this->Whois->lookup($domain['Domain']['domain_name']);
+    $whois = array();
+    $whois['regrinfo']['admin']['email'] = 'simon.jobling@gmail.com';
 		$this->set(compact('domain','whois'));
 	}
 
