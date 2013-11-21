@@ -29,7 +29,7 @@
   		<td class="summary">
   			<?php echo $html->link($domain['Domain']['domain_name'], "/domains/view/".$domain['Domain']['id']); ?>
   		</td>
-  		<td><abbr title="<?php echo date('c',strtotime($domain['Domain']['expiry'])); ?>" class="dtstart"><?php echo floor((strtotime($domain['Domain']['expiry']) - mktime())/3600/24) . ' days'; ?></abbr></td>
+  		<td><abbr title="<?php echo date('c',strtotime($domain['Domain']['expiry'])); ?>" class="dtstart"><i class="fa fa-clock-o"></i> <?php echo floor((strtotime($domain['Domain']['expiry']) - mktime())/3600/24) . ' days'; ?></abbr></td>
   		<td>
   		  <ul class="actions">
   		    <li> <?php echo $html->link('<i class="fa fa-refresh"></i> Refresh', array('action' => 'refresh', $domain['Domain']['id']),array('escape'=>false)); ?></li>
