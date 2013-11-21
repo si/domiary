@@ -1,5 +1,4 @@
-<!-- File: domains/add.ctp -->	
-	
+
 <h1>Add Domain</h1>
 <?php echo $this->element('domain_form'); ?>
 <?php
