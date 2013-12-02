@@ -311,7 +311,7 @@ nav li a.current {
 
 
 h1, h2, h3, p, ul, ol {
-  margin-bottom: 10px;
+  margin-bottom: 1em;
 }
 h1, h2, h3 {
   font-family: 'Doppio One', sans-serif;
@@ -326,7 +326,9 @@ h1 {
   text-align: center;
 }
 h2 {
-  text-shadow: rgba(0,0,0,0.5) 0 0 2px;
+  margin-top: 1em;
+  text-align: center;
+  text-shadow: rgba(0,0,0,0.2) 0 0 3px;
 }
 
 table {
@@ -482,7 +484,7 @@ input[type=submit], button {
   margin: 0 auto;
   text-align: center;
   text-transform: uppercase;
-  width: 20em;  
+  width: 17em;  
 }
 
 input[type=submit]:hover, 
