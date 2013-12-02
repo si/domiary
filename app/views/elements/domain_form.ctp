@@ -8,7 +8,7 @@ echo $form->create('Domain');
   <?php
   echo $form->input('domain_name', array('label'=>'Domain'));
   echo $form->input('tags', array('label'=>'Tags (comma separated)'));
-  echo $form->input('archive', array('label'=>'Archive'));
+  if($this->data['Domain']['id']!='') echo $form->input('archive', array('label'=>'Archive'));
   ?>  
 </fieldset>
 <?php
