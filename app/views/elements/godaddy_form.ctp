@@ -1,3 +1,5 @@
+<h2>Support Domiary by ordering your domains through us</h2>
+
 <form action="http://www.dpbolvw.net/interactive" name="LookupForm" method="get">
   <fieldset>
     <legend>Search GoDaddy</legend>  
