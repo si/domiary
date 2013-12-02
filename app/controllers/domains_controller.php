@@ -45,7 +45,7 @@ class DomainsController extends AppController
 	}
 
 	function add() {
-		if (!empty($this->data)) {
+		if (!empty($this->data) && $this->Domain->validates()) {
 
     		$whois_data = $this->Whois->lookup($this->data['Domain']['domain_name']);
 
