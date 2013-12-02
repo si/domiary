@@ -509,6 +509,20 @@ fieldset ul {
   font-size: 0.8em; 
 }
 
+.btn {
+  background: rgba(255,255,255,0.2);
+  color: rgba(0,0,0,0.5);
+  display: inline-block;
+  padding: 0.5em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.btn.cancel {
+  margin: 0 auto;
+  text-align: center;
+  width: 100px;
+}
+
 .important {
   background: rgba(255,255,255,0.8);
   color: rgba(0,0,0,0.8);
