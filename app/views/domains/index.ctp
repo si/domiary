@@ -65,7 +65,7 @@
   
   <?php echo $this->element('domain_form'); ?>
 
-  <?php echo $this->element('godaddy_form'); ?>
+  <?php echo $this->element('namecheap'); ?>
 
 </aside>
 
