@@ -9,7 +9,7 @@ echo $form->create();
     <li><?php echo $form->input('username'); ?></li>
     <li><?php echo $form->input('email'); ?></li>
     <li><?php echo $form->input('password'); ?></li>
-    <li><?php echo $form->input('password_confirm', array('label'=>'Confirm password')); ?></li>
+    <li><?php echo $form->input('password_confirm', array('type'=>'password','label'=>'Confirm password')); ?></li>
   </ul>
 </fieldset>
 <?php echo $form->end('Register'); ?>
