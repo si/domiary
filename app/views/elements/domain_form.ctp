@@ -1,5 +1,5 @@
 <?php
-echo $form->create('Domain');
+echo $form->create('Domain', array('action'=>( isset ( $this->data['Domain']['id']))?'edit':'add'));
   echo $form->input('id', array('type'=>'hidden')); 
   echo $form->input('user_id', array('type'=>'hidden','value'=>$_SESSION['Auth']['User']['id'])); 
 ?>
