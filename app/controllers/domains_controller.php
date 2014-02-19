@@ -148,57 +148,5 @@ class DomainsController extends AppController
     $redirect = 'http://affiliate.godaddy.com/redirect/DD08025088754A6397FB89B0B56E5B21FEF5952E7B83CF35DB61C67ED8FF8F6BCB40B0DBE45FA8FA74DC2D5844CB321A';
   }
   
-  function authenticate($id,$method) {
-    
-    $domain = $this->Domain->findById($id);
-    $this->set(compact('domain','method'));
-    
-  }
-  
-  function send_email($id) {
-
-    $domain = $this->Domain->findById($id);
-    $this->set(compact('domain'));
-    
-    // CURL request to remote file.
-    
-    // If file exists, update records to show authentication by FTP.
-    
-    // If file doesn't exist, alert the user and to check the file exists.
-    
-    
-  }
-
-  function check_ftp($id) {
-
-    $domain = $this->Domain->findById($id);
-    $this->set(compact('domain'));
-    
-    // CURL request to remote file.
-    
-    // If file exists, update records to show authentication by FTP.
-    
-    // If file doesn't exist, alert the user and to check the file exists.
-    
-    
-  }
-
-  function check_html($id) {
-
-    $domain = $this->Domain->findById($id);
-    $this->set(compact('domain'));
-    
-    // CURL request to remote homepage
-
-    // Look for META tag with domiary:owner name
-    
-    // If tag exists, update records to show authentication by HTML
-    
-    // If tag doesn't exist, alert the user and to confirm by viewing source
-    
-    
-  }
-
-  
 }
 ?>
