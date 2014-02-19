@@ -619,6 +619,16 @@ footer {
   color: #111;
 }
 
+.message {
+  background: rgba(255,255,255,0.8);
+  color: #000;
+  font: 2rem;
+  padding: 1em;
+  text-align: center;
+}
+
+
+
 /*
  * Media queries for responsive design
  * These follow after primary styles so they will successfully override. 

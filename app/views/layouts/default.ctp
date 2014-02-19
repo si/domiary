@@ -33,6 +33,9 @@
     </header>
     <?php echo $this->element('nav'); ?>
     <div id="content">
+
+		<?php echo $session->flash(); ?>
+
 		<?php echo $content_for_layout; ?>
 		
     </div>
