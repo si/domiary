@@ -36,7 +36,7 @@
     <li><?php echo $html->link('<i class="fa fa-envelope"></i> Send email to owner', array('controller'=>'domains','action'=>'authenticate',$domain['Domain']['id'].'/email'),array('class'=>'cta', 'title'=>'Send an email to ' . $whois['regrinfo']['admin']['email'],'escape'=>false)); ?></li>
     <?php endif; ?>
   
-    <li><?php echo $html->link('<i class="fa fa-code"></i> Check META tag', array('controller'=>'domains','action'=>'authenticate',$domain['Domain']['id'].'/meta'),array('class'=>'cta', 'escape'=>false)); ?></li>
+    <li><?php echo $html->link('<i class="fa fa-code"></i> Check META tag', array('controller'=>'domains','action'=>'authenticate',$domain['Domain']['id'].'/html'),array('class'=>'cta', 'escape'=>false)); ?></li>
     
     <li><?php echo $html->link('<i class="fa fa-cloud"></i> Upload file to website', array('controller'=>'domains','action'=>'authenticate',$domain['Domain']['id'].'/ftp'),array('class'=>'cta', 'title'=>'Upload a file to ' . $domain['Domain']['domain_name'],'escape'=>false)); ?></li>
   </ul>
