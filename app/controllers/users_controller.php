@@ -25,8 +25,8 @@ class UsersController extends AppController {
         function add() {
             if(!empty($this->data)) {
               $this->User->save($this->data);
-              $this->Auth->login();
-              $this->redirect(array('controller'=>'domains','action'=>'index'));
+              $this->Auth->login($this->User);
+              $this->redirect(array('controller'=>'domains','action'=>'add'));
             }
         }   
 
