@@ -1,0 +1,114 @@
+@import "_reset"; // Lets level the playing field
+@import "_vars"; // Import the variables
+@import "_mixins"; // Import the mixins file
+@import "_grids.scss"; // lets grid this baby up.
+@import "_helpers.scss"; // some standard helpers
+@import "_mq.scss"; // load in the media queries
+@import "_debug.scss"; // deeeebuuuuuuuug!
+
+
+/* GENERAL STYLES ================================= */
+
+* { 
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box; 
+}
+
+/* SITE STYLES ================================= */
+
+body {
+	font-family: $bodyType;
+}
+
+#container {
+	max-width: 95%;
+	text-align: left;
+	@include mq($tiny) {
+		width: 60em;
+		max-width: 95%;
+		margin: 0 auto;
+	}
+}
+
+header, footer {
+	clear: both;
+	text-align: center;
+	padding: 1em 0;
+}
+
+header {
+	font-weight: normal;
+	a{	
+		@include transition;
+		font-family: $bodyType;
+		&:link, &:visited {
+			background-color: darken($black, 20%);
+			color: $white;
+			@include font-size(14);
+			display: inline-block;
+			line-height: 4.2rem;
+			padding: 0.5rem;
+			text-transform: uppercase;
+			text-decoration: none;
+			width: 5rem;
+			height: 5rem;
+			border-radius: 50%;
+		}
+		&:hover, &:active, &:focus {
+			background-color: darken($black, 50);
+		}
+	}
+}
+
+nav {
+	margin-bottom: 2rem;
+	ul {
+		background-color: $black;
+		border-radius: 0.3rem;
+		padding: 1rem 0;
+		li {
+			display: inline;
+			
+			a {
+				color: $white;
+				text-decoration: none;
+				padding: 0.9rem 1rem;
+				text-transform: uppercase;
+				@include font-size(14);
+				font-weight: bold;
+				&:hover {
+					color: $maincol;
+					background-color: darken($white, 60%);
+				}
+			}
+		}
+	}
+}
+
+h1 {
+	font-family: $headType;
+	@include font-size(32);
+	line-height: 1.5;
+	text-align: center;
+}
+
+.cta {
+    background-color: $maincol;
+    text-decoration: none;
+    padding:  1em;
+    display: block;
+    text-align: center;
+    border-radius: 0.3rem;
+    font-weight:  bold;
+    a, a:visited {
+    	color: $black;
+    	@include transition;
+    	&:hover {
+    		color: darken($black, 20);
+    	}
+    }
+    &:hover {
+    	background-color: lighten($maincol, 20);
+    }
+}
