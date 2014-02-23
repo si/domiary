@@ -10,4 +10,4 @@ if ($session->check('Message.auth')) $session->flash('auth');
 </fieldset>
 <?php echo $form->end('Login'); ?>  
 
-<p><?php echo $html->link('Register',array('action'=>'add')); ?></p>
+<p>Not registered? <?php echo $html->link('Register',array('action'=>'add')); ?> for a free account.</p>

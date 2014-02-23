@@ -153,14 +153,15 @@ nav {
     padding: 1rem 0;
     text-align: center; }
     nav ul li {
-      display: inline; }
+      display: inline;
+      line-height: 1.5; }
       nav ul li a {
         color: #fefefe;
         text-decoration: none;
-        padding: 0.9rem 1rem;
+        padding: 0.9rem 0.5rem;
         text-transform: uppercase;
-        font-size: 14px;
-        font-size: 0.875rem;
+        font-size: 13px;
+        font-size: 0.8125rem;
         font-weight: bold; }
         nav ul li a:hover {
           color: #ffbe1e;
@@ -228,6 +229,19 @@ form input, form select {
   border-radius: 0.3rem;
   border: #ffbe1e;
   background-color: rgba(254, 254, 254, 0.9); }
+form label {
+  display: block;
+  padding-top: 0.5rem; }
+  @media screen and (min-width: 20em) {
+    form label {
+      text-align: center; } }
+form input, form textarea {
+  width: 100%; }
+  @media screen and (min-width: 20em) {
+    form input, form textarea {
+      width: 50%;
+      margin: 0.5rem auto;
+      display: block; } }
 
 #UserAddForm ul {
   padding: 0; }
@@ -235,11 +249,6 @@ form input, form select {
     list-style-type: none;
     margin: 0;
     padding: 0; }
-    #UserAddForm ul li label {
-      display: block;
-      padding-top: 0.5rem; }
-    #UserAddForm ul li input, #UserAddForm ul li textarea {
-      width: 100%; }
 
 footer {
   background-color: rgba(0, 0, 0, 0.4);
