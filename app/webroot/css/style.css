@@ -61,6 +61,29 @@ table {
   float: right;
   margin-left: 10px; }
 
+.container {
+  margin: 0 auto;
+  max-width: 48rem;
+  width: 90%; }
+
+@media screen and (min-width: 37.5em) {
+  .column {
+    float: left;
+    padding-left: 1rem;
+    padding-right: 1rem; }
+    .column .full {
+      width: 100%; }
+    .column .two-thirds {
+      width: 66.7%; }
+    .column .half {
+      width: 50%; }
+    .column .third {
+      width: 33.3%; }
+    .column .fourth {
+      width: 24.95%; }
+    .column .flow-opposite {
+      float: right; } }
+
 /* endif */
 /* GENERAL STYLES ================================= */
 * {
@@ -70,15 +93,27 @@ table {
 
 /* SITE STYLES ================================= */
 body {
-  font-family: helvetica, sans-serif; }
+  font-family: helvetica, sans-serif;
+  background: fixed black url(/img/bokeh.jpg) no-repeat 0 0;
+  background-size: cover;
+  color: #fefefe; }
+
+a {
+  color: #ffbe1e;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  text-decoration: none; }
+  a:hover {
+    color: #e24234; }
 
 #container {
-  max-width: 95%;
+  max-width: 100%;
   text-align: left; }
   @media screen and (min-width: 20em) {
     #container {
       width: 60em;
-      max-width: 95%;
+      max-width: 100%;
       margin: 0 auto; } }
 
 header, footer {
@@ -110,11 +145,13 @@ header {
       background-color: rgba(0, 0, 0, 0.7); }
 
 nav {
-  margin-bottom: 2rem; }
+  width: 95%;
+  margin: 0 auto 2rem; }
   nav ul {
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 0.3rem;
-    padding: 1rem 0; }
+    padding: 1rem 0;
+    text-align: center; }
     nav ul li {
       display: inline; }
       nav ul li a {
@@ -139,13 +176,16 @@ h1 {
 .cta {
   background-color: #ffbe1e;
   text-decoration: none;
-  padding: 1em;
+  padding: 1rem;
   display: block;
   text-align: center;
   border-radius: 0.3rem;
-  font-weight: bold; }
+  font-weight: bold;
+  margin: 2rem 0;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 18px;
+  font-size: 1.125rem; }
   .cta a, .cta a:visited {
-    color: rgba(0, 0, 0, 0.7);
     -webkit-transition: all 0.1s ease-in-out;
     -moz-transition: all 0.1s ease-in-out;
     transition: all 0.1s ease-in-out; }
@@ -153,3 +193,62 @@ h1 {
       color: rgba(0, 0, 0, 0.7); }
   .cta:hover {
     background-color: #ffdb84; }
+
+#content {
+  width: 95%;
+  margin: 0 auto; }
+  #content p {
+    line-height: 1.5;
+    font-family: helvetica, sans-serif;
+    font-size: 16px;
+    font-size: 1rem;
+    padding-bottom: 1rem; }
+  #content ul {
+    padding: 1rem; }
+  #content li {
+    line-height: 1.5;
+    margin-left: 1rem;
+    padding: 0.5rem 0;
+    list-style-type: disc; }
+
+#cta_godaddy, #cta_1and1 {
+  border-top: 1px solid rgba(254, 254, 254, 0.6);
+  padding: 1rem 0; }
+  #cta_godaddy h2, #cta_1and1 h2 {
+    font-family: "Doppio One", sans-serif;
+    text-align: center;
+    padding-bottom: 1rem;
+    line-height: 1.5; }
+
+form legend {
+  font-family: "Doppio One", sans-serif; }
+form input, form select {
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border-radius: 0.3rem;
+  border: #ffbe1e;
+  background-color: rgba(254, 254, 254, 0.9); }
+
+#UserAddForm ul {
+  padding: 0; }
+  #UserAddForm ul li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0; }
+
+footer {
+  background-color: rgba(0, 0, 0, 0.4);
+  margin-top: 2rem;
+  color: rgba(254, 254, 254, 0.7);
+  font-size: 12px;
+  font-size: 0.75rem;
+  line-height: 2;
+  padding: 1rem 0; }
+  footer a {
+    color: #ffbe1e;
+    text-decoration: none;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out; }
+    footer a:hover {
+      color: #e24234; }
