@@ -1,8 +1,8 @@
 <!-- File: domains/index.ctp -->
 
 <h1>My Domains</h1>
-
-<article>
+<div class="container">
+<article class="column two-thirds">
   <table>
     <thead>
   	<tr>
@@ -45,7 +45,7 @@
   
   </table>
 </article>
-<aside>
+<aside class="column third">
   <section class="statistics">
     <h2>Statistics</h2>
     <ul>
@@ -68,4 +68,5 @@
   <?php echo $this->element('namecheap'); ?>
 
 </aside>
+</div>
 

@@ -82,6 +82,9 @@ nav {
 		border-radius: 0.3rem;
 		padding: 1rem 0;
 		text-align: center;
+		@include mq($small) {
+			text-align: left;
+		}
 		li {
 			display: inline;
 			line-height: 1.5;
@@ -96,6 +99,10 @@ nav {
 				&:hover {
 					color: $maincol;
 					background-color: darken($white, 60%);
+				}
+				@include mq ($small) {
+					@include font-size(15);
+					padding: 0.9rem 1rem;
 				}
 			}
 		}
@@ -140,6 +147,10 @@ h1 {
 		font-family: $bodyType;
 		@include font-size(16);
 		padding-bottom: 1rem;
+		@include mq($medium) {
+			max-width: 50em;
+			margin: 0 auto;
+		}
 	}
 	ul {
 		padding: 1rem;

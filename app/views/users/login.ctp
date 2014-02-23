@@ -10,4 +10,4 @@ if ($session->check('Message.auth')) $session->flash('auth');
 </fieldset>
 <?php echo $form->end('Login'); ?>  
 
-<p>Not registered? <?php echo $html->link('Register',array('action'=>'add')); ?> for a free account.</p>
+<p class="cta-register">Not registered? <?php echo $html->link('Register',array('action'=>'add')); ?> for a free account.</p>
