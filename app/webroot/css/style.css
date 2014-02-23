@@ -235,6 +235,11 @@ form input, form select {
     list-style-type: none;
     margin: 0;
     padding: 0; }
+    #UserAddForm ul li label {
+      display: block;
+      padding-top: 0.5rem; }
+    #UserAddForm ul li input, #UserAddForm ul li textarea {
+      width: 100%; }
 
 footer {
   background-color: rgba(0, 0, 0, 0.4);
