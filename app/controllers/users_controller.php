@@ -28,6 +28,15 @@ class UsersController extends AppController {
       $this->User->save($this->data);
       $this->Auth->login($this->User);
       $this->Session->setFlash('Welcome to Domiary! You can now add your first domain.');
+
+      // Send registration email
+			$this->Email->to = $this->data['User']['email'];
+			$this->Email->subject = 'Welcome to Domiary';
+			$this->Email->sendAs = 'html';
+			$this->Email->template = 'new_user';
+			$this->Email->helpers = array('Html', 'Number', 'Time');
+			$this->Email->send();
+
       $this->redirect(array('controller'=>'domains','action'=>'add'));
     }
   }   
@@ -72,7 +81,6 @@ class UsersController extends AppController {
 				$this->Email->sendAs = 'html';
 				$this->Email->template = 'forgot_password';
 				$this->Email->helpers = array('Html', 'Number', 'Time');
-				$this->Email->viewVars = array('account'=>$account,'token'=>$token);
 				$this->Email->send();
     
         
