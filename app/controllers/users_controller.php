@@ -64,11 +64,17 @@ class UsersController extends AppController {
         );
         $this->User->save($token_data);
 
-        // TODO: Send email to reset
-        
-        // Output link for email
-        
-        $this->set('token', $token);
+        $this->set(array('account'=>$account , 'token'=> $token));
+
+        // Send email to reset with token
+				$this->Email->to = $account['User']['email'];
+				$this->Email->subject = '[Domiary] Reset Password';
+				$this->Email->sendAs = 'html';
+				$this->Email->template = 'forgot_password';
+				$this->Email->helpers = array('Html', 'Number', 'Time');
+				$this->Email->viewVars = array('account'=>$account,'token'=>$token);
+				$this->Email->send();
+    
         
       }
     }
