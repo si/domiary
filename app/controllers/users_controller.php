@@ -74,7 +74,16 @@ class UsersController extends AppController {
     }
   }
   
-  function password() {
+  function password($token) {
+    
+    // No token
+    
+    // Invalid token
+    
+    // Valid token
+    
+    // Valid passwords
+    
     
     
     
