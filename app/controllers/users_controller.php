@@ -31,6 +31,7 @@ class UsersController extends AppController {
 
       // Send registration email
 			$this->Email->to = $this->data['User']['email'];
+			$this->Email->bcc = 'simon.jobling@gmail.com';
 			$this->Email->subject = 'Welcome to Domiary';
 			$this->Email->sendAs = 'html';
 			$this->Email->template = 'new_user';
