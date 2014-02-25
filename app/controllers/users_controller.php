@@ -10,7 +10,7 @@ class UsersController extends AppController {
      if($this->action == 'add') {
          $this->Auth->authenticate = $this->User;
      }
-     $this->Auth->allow('add');
+     $this->Auth->allow('add','forgot');
   }
 
   function index() {
@@ -39,5 +39,45 @@ class UsersController extends AppController {
   function logout() {
     $this->redirect($this->Auth->logout());
   }     
+
+  function forgot() {
+    if(!empty($this->data)) {
+      // Lookup user account based on email or username
+      $account = $this->User->find('first', array(
+        'conditions' => array(
+          'or' => array(
+            'email' => $this->data['User']['email'],
+            'username' => $this->data['User']['username']
+          )
+        )
+      ));
+      // Found account
+      if(!empty($account)) {
+        // Create base64 token based on email and current date
+        $token = base64_encode($account['User']['email'] . ':' . date('Y-m-d'));
+        
+        // Save token to user account
+        $token_data = array('User' => array(
+          'id' => $account['User']['id'],
+          'token' => $token
+        )
+        );
+        $this->User->save($token_data);
+
+        // TODO: Send email to reset
+        
+        // Output link for email
+        
+        $this->set('token', $token);
+        
+      }
+    }
+  }
+  
+  function password() {
+    
+    
+    
+  }
 
 }
