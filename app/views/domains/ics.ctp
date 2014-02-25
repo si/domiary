@@ -7,18 +7,18 @@ if(isset($error)) {
 
   foreach($domains as $domain) {
   
-    echo '
-BEGIN:VEVENT
-UID:'. md5($domain['Domain']['domain_name']) . '
-SUMMARY:'. strtoupper($domain['Domain']['domain_name']) . ' expires
-DESCRIPTION:' . $domain['Domain']['domain_name'] . ' is due to expire today
-LOCATION:N/A
-DTSTART;VALUE=DATETIME:'.$time->format('Ymd\This\Z',$domain['Domain']['expiry']) . '
-DTSTAMP:' . $time->format('Ymd\This\Z',$domain['Domain']['expiry']) . '
-CLASS:PUBLIC
-STATUS:FREE
-X-MICROSOFT-CDO-BUSYSTATUS:FREE
-';
+    echo "
+BEGIN:VEVENT\r\n
+UID:". md5($domain['Domain']['domain_name']) . "\r\n
+SUMMARY:". strtoupper($domain['Domain']['domain_name']) . " expires\r\n
+DESCRIPTION:" . $domain['Domain']['domain_name'] . " is due to expire today\r\n
+LOCATION:N/A\r\n
+DTSTART;VALUE=DATE:".$time->format('Ymd',$domain['Domain']['expiry']) . "\r\n
+DTSTAMP;VALUE=DATE:" . $time->format('Ymd',$domain['Domain']['expiry']) . "\r\n
+CLASS:PUBLIC\r\n
+STATUS:FREE\r\n
+X-MICROSOFT-CDO-BUSYSTATUS:FREE\r\n
+";
 
     if(isset($reminder_value) && isset($reminder_unit)){
         $reminder_date = '-P';
@@ -35,8 +35,8 @@ X-MICROSOFT-CDO-BUSYSTATUS:FREE
         echo 'END:VALARM'."\n";
     }
 
-    echo 'END:VEVENT
-';
+    echo "END:VEVENT\r\n
+";
 
   } // loop domains
 
