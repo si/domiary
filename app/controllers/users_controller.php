@@ -10,7 +10,7 @@ class UsersController extends AppController {
      if($this->action == 'add') {
          $this->Auth->authenticate = $this->User;
      }
-     $this->Auth->allow('add','forgot');
+     $this->Auth->allow('add','forgot','password');
   }
 
   function index() {
@@ -89,19 +89,40 @@ class UsersController extends AppController {
     }
   }
   
-  function password($token) {
+  function password($token='') {
     
-    // No token
+    // form posted
+    if(!empty($this->data)) {
     
-    // Invalid token
-    
-    // Valid token
-    
-    // Valid passwords
-    
-    
-    
-    
+      if($this->data['User']['password']!=$this->data['User']['password_confirm']) {
+        $this->Error->set('Passwords don\'t match. Try again!');
+      } else {
+        // decode token to get user
+        $token = base64_decode($this->data['User']['token']);
+        list($email,$date) = explode(':',$token);
+        $user = $this->User->find('first',array('conditions'=>array('email'=>$email)));
+        $this->User->save(array(
+          'User' => array(
+            'id' => $user['User']['id'],
+            'password' => $this->data['User']['password'],
+            'password_confirm' => $this->data['User']['password_confirm'],
+            'token' => 'NULL',
+          )
+        ));
+        $this->set('success','Your shiny new password has been set. You can now log in with it');
+      }
+      
+    } else {
+      // No token
+      if($token=='') {
+        $this->Error->set('No token has been set');
+      } else {
+        $this->set('token',$token);
+        $this->data['User']['token'] = $token;
+      }
+      
+    }
+        
   }
 
 }
