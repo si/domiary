@@ -14,10 +14,11 @@ echo $form->create();
 ?>
 <fieldset>
   <legend>Your Details</legend>
-  <ul>
-    <li><?php echo $form->input('username'); ?></li>
-    <li><?php echo $form->input('email'); ?></li>
-  </ul>
+
+  <?php echo $form->input('username'); ?>
+  or
+  <?php echo $form->input('email'); ?>
+
 </fieldset>
 <?php echo $form->end('Find account'); ?>
 
