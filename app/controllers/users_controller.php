@@ -132,6 +132,16 @@ class UsersController extends AppController {
                 )
               ));
               $this->set('success','Your shiny new password has been set. You can now log in with it');
+              
+              $this->set('user', $user);
+              // Send email to reset with token
+      				$this->Email->to = $user['User']['email'];
+      				$this->Email->subject = '[Domiary] New Password';
+      				$this->Email->sendAs = 'html';
+      				$this->Email->template = 'new_password';
+      				$this->Email->helpers = array('Html','Time');
+      				$this->Email->send();
+              
             } // Token expiration
           } // Email validity
         } // Token validity
