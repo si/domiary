@@ -41,7 +41,7 @@
     </div>
     
     <footer>
-		  <p id="copyright">&copy; 2008-<?php echo Date('Y'); ?> Domiary - another <a href="http://unstyled.com/">Unstyled</a> project from <a href="http://twitter.com/Si">Si</a></p>
+		  <p id="copyright">&copy; 2008-<?php echo Date('Y'); ?> Domiary - another <a href="http://unstyled.com/">Unstyled</a> project from <a href="http://twitter.com/Si">Si</a> &amp; <a href="http://twitter.com/MrQwest">Anthony</a></p>
 		  <p id="twitter">Follow <a href="http://twitter.com/domiary">@domiary on Twitter</a> for updates</p>
     </footer>
   </div> <!--! end of #container -->
