@@ -21,29 +21,34 @@ class User extends AppModel {
   var $validate = array(
     'name'=>array(
       'rule'=>array('minLength', 2),
-      'message'=>'Name has to be at least four characters'),
+      'message'=>'Name has to be at least 2 characters'),
   
     'email'=>array(
       'rule'=>array('email'),
       'message'=>'Please enter a valid email'),
   
     'username'=>array(
-      'Username has to be at least four characters'=>array(
-        'rule'=>array('minLength', 2)
+      'length' =>array(
+        'rule' =>array('minLength', 2),
+        'message' => 'Username has to be at least 2 characters',
       ),
-      'This username is already taken, please try another'=>array(
-        'rule'=>'isUnique'
+      'unique' =>array(
+        'rule'=>'isUnique',
+        'message' => 'This username is already taken, please try another',
       )),
   
     'password'=>array(
-      'Password cannot be empty'=>array(
-         'rule'=>array('notEmpty')
+      'empty' =>array(
+         'rule'=>array('notEmpty'),
+         'message' => 'Password cannot be empty',
         ),
-      'Password must be at least four characters'=>array(
-         'rule'=>array('minLength', 4)
+      'length'=>array(
+         'rule'=>array('minLength', 4),
+         'message' => 'Password must be at least four characters',
         ),
-      'Passwords must match'=>array(
-        'rule'=>array('passwordCompare', 'password_confirm')
+      'match' =>array(
+        'rule'=>array('passwordCompare', 'password_confirm'),
+        'message' => 'Passwords must match',
       )
     )
   );
