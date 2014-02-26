@@ -8,7 +8,15 @@
 
 <?php else : ?>
 <h1>New Password</h1>
-<p>Your token looks good. You can now choose a new password that is more memorable.</p>
+
+<?php
+if(isset($error)) {
+  echo '<p class="error">' . $error . '</p>'; 
+} else {
+  echo '<p>Your token looks good. You can now choose a new password that is more memorable.</p>';
+}
+?>
+
 <?php
 echo $form->create();
   echo $form->input('token',array('type'=>'hidden'));
