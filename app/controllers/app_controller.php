@@ -6,7 +6,7 @@ class AppController extends Controller {
   function beforeFilter() {
 
     $this->Auth->allow('display');
-    $this->Auth->loginRedirect = array('controller'=>'users', 'action'=>'index');
+//    $this->Auth->loginRedirect = array('controller'=>'users', 'action'=>'index');
 
     $this->Email->smtpOptions = array(
       'port'=>'587',
