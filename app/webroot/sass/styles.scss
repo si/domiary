@@ -1,0 +1,233 @@
+@import "_reset"; // Lets level the playing field
+@import "_vars"; // Import the variables
+@import "_mixins"; // Import the mixins file
+@import "_helpers.scss"; // some standard helpers
+@import "_mq.scss"; // load in the media queries
+@import "_grids.scss"; // lets grid this baby up.
+@import "_debug.scss"; // deeeebuuuuuuuug!
+
+
+/* GENERAL STYLES ================================= */
+
+* { 
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box; 
+}
+
+/* SITE STYLES ================================= */
+
+body {
+	font-family: $bodyType;
+	background: fixed #222 url(/img/bokeh.jpg) no-repeat 0 0;
+	background-size: cover;
+	color: $white;
+}
+
+a {
+	color: $maincol;
+	@include transition(0.1s);
+	text-decoration: none;
+	&:hover {
+		color: $seccol;
+	}
+}
+
+#container {
+	max-width: 100%;
+	text-align: left;
+	@include mq($tiny) {
+		width: 60em;
+		max-width: 100%;
+		margin: 0 auto;
+	}
+}
+
+header, footer {
+	clear: both;
+	text-align: center;
+	padding: 1em 0;
+}
+
+header {
+	font-weight: normal;
+	a{	
+		@include transition;
+		font-family: $bodyType;
+		&:link, &:visited {
+			background-color: darken($black, 20%);
+			color: $white;
+			@include font-size(14);
+			display: inline-block;
+			line-height: 4.2rem;
+			padding: 0.5rem;
+			text-transform: uppercase;
+			text-decoration: none;
+			width: 5rem;
+			height: 5rem;
+			border-radius: 50%;
+		}
+		&:hover, &:active, &:focus {
+			background-color: darken($black, 50);
+		}
+	}
+}
+
+nav {
+	width: 95%;
+	margin: 0 auto 2rem;
+
+	ul {
+		background-color: $black;
+		border-radius: 0.3rem;
+		padding: 1rem 0;
+		text-align: center;
+		@include mq($small) {
+			text-align: left;
+		}
+		li {
+			display: inline;
+			line-height: 1.5;
+			
+			a {
+				color: $white;
+				text-decoration: none;
+				padding: 0.9rem 0.5rem;
+				text-transform: uppercase;
+				@include font-size(13);
+				font-weight: bold;
+				&:hover {
+					color: $maincol;
+					background-color: darken($white, 60%);
+				}
+				@include mq ($small) {
+					@include font-size(15);
+					padding: 0.9rem 1rem;
+				}
+			}
+		}
+	}
+}
+
+h1 {
+	font-family: $headType;
+	@include font-size(32);
+	line-height: 1.5;
+	text-align: center;
+}
+
+.cta {
+    background-color: $maincol;
+    text-decoration: none;
+    padding:  1rem;
+    display: block;
+    text-align: center;
+    border-radius: 0.3rem;
+    font-weight:  bold;
+    margin: 2rem 0;
+    color: $black;
+    @include font-size(18);
+    a, a:visited {
+
+    	@include transition;
+    	&:hover {
+    		color: darken($black, 20);
+    	}
+    }
+    &:hover {
+    	background-color: lighten($maincol, 20);
+    }
+}
+
+#content {
+	width: 95%;
+	margin: 0 auto;
+	p {
+		line-height: 1.5;
+		font-family: $bodyType;
+		@include font-size(16);
+		padding-bottom: 1rem;
+		@include mq($medium) {
+			max-width: 50em;
+			margin: 0 auto;
+		}
+	}
+	ul {
+		padding: 1rem;
+	}
+	li {
+		line-height: 1.5;
+		margin-left: 1rem;
+		padding:0.5rem 0;
+		list-style-type: disc;
+	}
+}
+
+#cta_godaddy, #cta_1and1 {
+	border-top: 1px solid rgba($white, 0.6);
+	padding: 1rem 0;
+	h2 {
+		font-family: $headType;
+		text-align: center;
+		padding-bottom: 1rem;
+		line-height: 1.5;
+	}
+}
+
+form {
+	legend {
+		font-family: $headType;
+	}
+	input, select,  {
+		padding: 0.5rem;
+		margin: 0.5rem 0;
+		border-radius: 0.3rem;
+		border: $maincol;
+		background-color: rgba($white, 0.9);
+	}
+	label {
+		display: block;
+		padding-top: 0.5rem;
+		@include mq($tiny) {
+			text-align: center;
+		}
+	}
+	input, textarea {
+		width: 100%;
+		@include mq($tiny) {
+			width: 50%;
+			margin: 0.5rem auto;
+			display: block;
+		}
+	}
+}
+
+#UserAddForm {
+	ul {
+		padding: 0;
+		li {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+
+			
+		}
+	}
+}
+
+footer {
+	background-color: rgba($black, 0.4);
+	margin-top: 2rem;
+	color: rgba($white,.7);
+	@include font-size(12);
+	line-height: 2;
+	padding: 1rem 0;
+	a {
+		color: $maincol;
+		text-decoration: none;
+		@include transition(0.1s);
+		&:hover {
+			color: $seccol;
+		}
+	}
+}
