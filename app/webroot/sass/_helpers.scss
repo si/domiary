@@ -1,0 +1,63 @@
+// =====================================
+//    helpers
+// -------------------------------------
+//
+// Contents
+//
+// 1. Hide from everything
+//
+// =====================================
+
+
+// hide from everything ----------------
+// Thanks Stu! ~ http://mrqw.es/t/j0
+
+// these blocks will only appear if extended. So div%hidden would create div.hidden {}
+
+%hidden {
+        display: none !important;
+        visibility: hidden;
+}
+
+%visually-hidden {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+        &.focusable:active,
+        &.focusable:focus {
+                clip: auto;
+                height: auto;
+                margin: 0;
+                overflow: visible;
+                position: static;
+                width: auto;
+        }
+}
+
+%invisible {
+        visibility: hidden;
+}
+
+ /* nav block > http://csswizardry.com/2011/09/the-nav-abstraction/ */
+.nav{
+    list-style:none;
+    margin-left:0;
+}
+    .nav > li,
+        .nav > li > a{
+            display:inline-block;
+           *display:inline;
+            zoom:1;
+    }
+
+/* media block > http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/ */
+.media {margin:10px;}
+.media, .bd {overflow:hidden; _overflow:visible; zoom:1;}
+.media .img {float:left; margin-right: 10px;}
+.media .img img{display:block;}
+.media .imgExt{float:right; margin-left: 10px;}
