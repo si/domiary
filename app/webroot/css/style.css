@@ -627,6 +627,10 @@ footer {
   text-align: center;
 }
 
+.cake-error {
+  background: rgba(230,30,30,0.8);
+  padding: 1em;
+}
 
 
 /*
