@@ -28,11 +28,3 @@ foreach($recent_domains as $domain) {
 </ol>
 </div>
 <?php endif; ?>
-
-<div id="cta_godaddy">
-<?php echo $this->element('godaddy_form'); ?>
-</div>
-
-<div id="cta_1and1">
-<?php echo $this->element('1&1_form'); ?>
-</div>
