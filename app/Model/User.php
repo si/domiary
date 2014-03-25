@@ -48,7 +48,7 @@ class User extends AppModel {
     )
   );
 
-  function passwordCompare($data, $fieldTwo) {   
+  public function passwordCompare($data, $fieldTwo) {   
 
     if($data['password'] != $this->data[$this->alias][$fieldTwo]) {
       $this->invalidate($fieldTwo, 'Passwords must match');
@@ -57,7 +57,7 @@ class User extends AppModel {
     return true;
   }
 
-  function hashPasswords($data, $enforce=false) {            
+  public function hashPasswords($data, $enforce=false) {            
 
      if($enforce && isset($this->data[$this->alias]['password'])) {
        if(!empty($this->data[$this->alias]['password'])) {
@@ -67,8 +67,9 @@ class User extends AppModel {
      return $data;
   }
 
-  function beforeSave() {
+  public function beforeSave($options = array()) {
     $this->hashPasswords(null, true);
     return true;
   }
+
 }

@@ -154,7 +154,7 @@ class UsersController extends AppController {
         $this->set('error','No token has been set');
       } else {
         $this->set('token',$token);
-        $this->data['User']['token'] = $token;
+//        $this->data['User']['token'] = $token;
       }
       
     }

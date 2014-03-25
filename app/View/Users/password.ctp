@@ -2,7 +2,7 @@
 
 <h1>Success!</h1>
 <p><?php echo $success; ?></p>
-<?php echo $html->link('In you go', array('controller'=>'users','action'=>'login')); ?>
+<?php echo $this->Html->link('In you go', array('controller'=>'users','action'=>'login')); ?>
 
 
 
@@ -18,16 +18,16 @@ if(isset($error)) {
 ?>
 
 <?php
-echo $form->create();
-  echo $form->input('token',array('type'=>'hidden'));
+echo $this->Form->create();
+  echo $this->Form->input('token',array('type'=>'hidden', 'value' => ((empty($this->data)) ? $token : $this->data['User']['token'])));
 ?>
 <fieldset>
   <legend>Passwords</legend>
 
-  <?php echo $form->input('password',array('label'=>'New password')); ?>
-  <?php echo $form->input('password_confirm',array('type'=>'password','label'=>'And to be sure')); ?>
+  <?php echo $this->Form->input('password',array('label'=>'New password')); ?>
+  <?php echo $this->Form->input('password_confirm',array('type'=>'password','label'=>'And to be sure')); ?>
 
 </fieldset>
-<?php echo $form->end('Set password'); ?>
+<?php echo $this->Form->end('Set password'); ?>
 
 <?php endif; ?>
