@@ -6,8 +6,8 @@
   <table>
     <thead>
   	<tr>
-  		<th><?php echo $html->link('Domain',array('action'=>'index','order/domain_name')); ?></th>
-  		<th><?php echo $html->link('Expires',array('action'=>'index','order/expiry')); ?></th>
+  		<th><?php echo $this->Html->link('Domain',array('action'=>'index','order/domain_name')); ?></th>
+  		<th><?php echo $this->Html->link('Expires',array('action'=>'index','order/expiry')); ?></th>
   		<th>Actions</th>
   	</tr>
     </thead>
@@ -27,14 +27,14 @@
   	?>
   	<tr class="vevent <?php echo (strtotime($domain['Domain']['expiry']) < mktime()) ? 'expired': 'active'; ?>">
   		<td class="summary">
-  			<?php echo $html->link($domain['Domain']['domain_name'], "/domains/view/".$domain['Domain']['id']); ?>
+  			<?php echo $this->Html->link($domain['Domain']['domain_name'], "/domains/view/".$domain['Domain']['id']); ?>
   		</td>
   		<td><abbr title="<?php echo date('c',strtotime($domain['Domain']['expiry'])); ?>" class="dtstart"><i class="fa fa-clock-o"></i> <?php echo floor((strtotime($domain['Domain']['expiry']) - mktime())/3600/24) . ' days'; ?></abbr></td>
   		<td>
   		  <ul class="actions">
-  		    <li> <?php echo $html->link('<i class="fa fa-refresh"></i> Refresh', array('action' => 'refresh', $domain['Domain']['id']),array('escape'=>false)); ?></li>
-  		    <li><?php echo $html->link('<i class="fa fa-edit"></i> Edit', array('action' => 'edit', $domain['Domain']['id']),array('escape'=>false)); ?></li>
-  		    <li><?php echo $html->link('<i class="fa fa-trash-o"></i> Delete', array('action' => 'delete', $domain['Domain']['id']), array('escape'=>false), 'Are you sure?' )?></li>
+  		    <li> <?php echo $this->Html->link('<i class="fa fa-refresh"></i> Refresh', array('action' => 'refresh', $domain['Domain']['id']),array('escape'=>false)); ?></li>
+  		    <li><?php echo $this->Html->link('<i class="fa fa-edit"></i> Edit', array('action' => 'edit', $domain['Domain']['id']),array('escape'=>false)); ?></li>
+  		    <li><?php echo $this->Html->link('<i class="fa fa-trash-o"></i> Delete', array('action' => 'delete', $domain['Domain']['id']), array('escape'=>false), 'Are you sure?' )?></li>
   		  </ul>
   		</td>
   	</tr>
@@ -55,11 +55,12 @@
     </ul>
   </section>
   <ul class="actions">
-    <li><?php echo $html->link('<i class="fa fa-plus"></i> Add domain',array('controller' => 'domains', 'action' => 'add'),array('class'=>'cta','escape'=>false)); ?></li>
+    <li><?php echo $this->Html->link('<i class="fa fa-plus"></i> Add domain',array('controller' => 'domains', 'action' => 'add'),array('class'=>'cta','escape'=>false)); ?></li>
     
     
     <li>
-    <?php echo $html->link('<i class="fa fa-calendar"></i> Subscribe to Calendar', array('controller'=>'domains','action' => 'ics', base64_encode($_SESSION['Auth']['User']['email'])), array('escape'=>false,'type'=>'text/calendar','class'=>'cta')); ?>
+    <?php echo $this->Html->link('<i class="fa fa-calendar"></i> Subscribe to Calendar', array('controller'=>'domains','action' => 'ics', base64_encode('simon.jobling@gmail.com')), // $_SESSION['Auth']['User']['email']
+    array('escape'=>false,'type'=>'text/calendar','class'=>'cta')); ?>
     </li>
   </ul>
   
