@@ -35,10 +35,10 @@ class AppController extends Controller {
 
   var $components = array('Auth','Email');
 
-  function beforeFilter() {
+  public function beforeFilter() {
 
     $this->Auth->allow('display');
-//    $this->Auth->loginRedirect = array('controller'=>'users', 'action'=>'index');
+    $this->Auth->loginRedirect = array('controller'=>'domains', 'action'=>'index');
 
     $this->Email->smtpOptions = array(
       'port'=>'587',
