@@ -8,7 +8,9 @@ app/tmp/logs/*
 app/tmp/sessions/*
 app/tmp/tests/*
 app/[Cc]onfig/database.php
+app/Config/app_secrets.php
 .sass-cache
+
 !empty
 
 app/composer.phar
