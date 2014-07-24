@@ -1,18 +1,19 @@
 <?php
-echo $form->create('Domain', array('action'=>( isset ( $this->data['Domain']['id']))?'edit':'add'));
-  echo $form->input('id', array('type'=>'hidden')); 
-  echo $form->input('user_id', array('type'=>'hidden','value'=>$_SESSION['Auth']['User']['id'])); 
+//$_SESSION['Auth']['User']['id']
+echo $this->Form->create('Domain', array('action'=>( isset ( $this->data['Domain']['id']))?'edit':'add'));
+  echo $this->Form->input('id', array('type'=>'hidden')); 
+  echo $this->Form->input('user_id', array('type'=>'hidden','value'=>'')); 
 ?>
 <fieldset>
-  <legend>Domain Details</legend>
+  <legend>Domain <d></d>etails</legend>
   <?php
-  echo $form->input('domain_name', array('label'=>'Domain'));
-  echo $form->input('tags', array('label'=>'Tags (comma separated)'));
-  if($this->data['Domain']['id']!='') echo $form->input('archive', array('label'=>'Archive'));
+  echo $this->Form->input('domain_name', array('label'=>'Domain'));
+  echo $this->Form->input('tags', array('label'=>'Tags (comma separated)'));
+  if(isset($this->data['Domain']) && $this->data['Domain']['id']!='') echo $this->Form->input('archive', array('label'=>'Archive'));
   ?>  
 </fieldset>
 <?php
-echo $form->end('Save');
+echo $this->Form->end('Save');
 ?>
 
 
