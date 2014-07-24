@@ -3,7 +3,7 @@ class DomainsController extends AppController
 {
   var $name = 'Domains';
   var $helpers = array('Time');
-  var $components = array('Whois');
+//  var $components = array('Whois');
   
   function beforeFilter() {
      parent::beforeFilter();
