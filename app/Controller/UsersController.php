@@ -14,6 +14,7 @@ class UsersController extends AppController {
   }
 
   public function index() {
+//    echo '<textarea style="width:100%;height:400px;">'; var_dump($this->Auth->user()); echo '</textarea>';
     $this->set('user', $this->User->find('first',
       array(
         'conditions'=>array(
@@ -25,8 +26,11 @@ class UsersController extends AppController {
 
   public function add() {
     if(!empty($this->data)) {
-      $this->User->save($this->data);
-      $this->Auth->login($this->User);
+      $saved = $this->User->save($this->data);
+      $this->Session->write('User.saved', $saved);
+      $logged_in = $this->Auth->login($this->User);
+      $this->Session->write('User.logged_in', $logged_in);
+
       $this->Session->setFlash('Welcome to Domiary! You can now add your first domain.');
 
       // Send registration email
