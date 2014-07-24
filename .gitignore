@@ -1,9 +1,7 @@
 tmp/*
 node_modules
-[Cc]onfig/core.php
 [Cc]onfig/database.php
 app/tmp/*
-app/[Cc]onfig/core.php
 app/[Cc]onfig/database.php
 .sass-cache
 !empty
