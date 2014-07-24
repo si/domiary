@@ -10,3 +10,5 @@ app/tmp/tests/*
 app/[Cc]onfig/database.php
 .sass-cache
 !empty
+
+app/composer.phar
