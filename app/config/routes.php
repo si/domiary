@@ -27,10 +27,19 @@
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
 	Router::connect('/', array('controller' => 'home', 'action' => 'index', 'home'));
-	Router::connect('/register', array('controller' => 'users', 'action' => 'add'));
-	Router::connect('/login', array('controller' => 'users', 'action' => 'login'));
-	Router::connect('/logout', array('controller' => 'users', 'action' => 'logout'));
-	Router::connect('/profile', array('controller' => 'users', 'action' => 'edit'));
+
+  Router::connect('/home', array( 'controller' => 'app_users', 'action' => 'home'));
+  Router::connect('/admin', array( 'controller' => 'pages', 'action' => 'display', 'admin'));
+  Router::connect('/users', array( 'controller' => 'app_users', 'action' => 'home'));
+  Router::connect('/users/index/*', array( 'controller' => 'app_users'));
+  Router::connect('/users/:action/*', array( 'controller' => 'app_users'));
+  Router::connect('/users/users/:action/*', array( 'controller' => 'app_users'));
+  Router::connect('/login', array( 'controller' => 'app_users', 'action' => 'login'));
+  Router::connect('/logout', array( 'controller' => 'app_users', 'action' => 'logout'));
+  Router::connect('/register', array( 'controller' => 'app_users', 'action' => 'add'));
+  Router::connect('/auth_login/*', array( 'controller' => 'app_users', 'action' => 'auth_login'));
+  Router::connect('/auth_callback/*', array( 'controller' => 'app_users', 'action' => 'auth_callback'));
+
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */

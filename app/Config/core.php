@@ -52,7 +52,7 @@
  */
 	Configure::write('Error', array(
 		'handler' => 'ErrorHandler::handleError',
-		'level' => E_ALL & ~E_DEPRECATED,
+		'level' => E_ALL & ~E_STRICT & ~E_DEPRECATED,
 		'trace' => true
 	));
 
@@ -121,7 +121,8 @@
  *	`manager_index()` and `/manager/controller/index`
  *
  */
-	//Configure::write('Routing.prefixes', array('admin'));
+
+Configure::write('Routing.prefixes', array('admin'));
 
 /**
  * Turn off all caching application-wide.
@@ -190,16 +191,6 @@
 	Configure::write('Session', array(
 		'defaults' => 'php'
 	));
-
-/**
- * A random string used in security hashing methods.
- */
-	Configure::write('Security.salt', 'DYhG93b0qlkjlk2j34l23kjjl2vniR2G0FgaC9mi');
-
-/**
- * A random numeric string (digits only) used to encrypt/decrypt strings.
- */
-	Configure::write('Security.cipherSeed', '768593096582739487238783645');
 
 /**
  * Apply timestamps with the last modified time to static assets (js, css, images).
@@ -346,3 +337,7 @@ Cache::config('_cake_model_', array(
 	'serialize' => ($engine === 'File'),
 	'duration' => $duration
 ));
+
+date_default_timezone_set('UTC');
+
+config('app_settings');
