@@ -34,7 +34,9 @@
     <?php echo $this->element('nav'); ?>
     <div id="content">
 
-		<?php echo $this->Session->flash(); ?>
+		<?php 
+		echo $this->Session->flash(); 
+		?>
 
 		<?php echo $content_for_layout; ?>
 		
