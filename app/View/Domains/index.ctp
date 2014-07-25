@@ -1,8 +1,19 @@
 <!-- File: domains/index.ctp -->
 
 <h1>My Domains</h1>
-
-<article>
+<menu class="alpha-index">
+  <ol>
+    <?php 
+    $alphas = range('A','Z');
+    foreach($alphas as $letter) :
+    ?>
+    <li><a href="#<?php echo $letter; ?>"><?php echo $letter; ?></a></li>
+    <?php
+    endforeach;
+    ?>
+  </ol>
+</menu>
+<main>
   <table>
     <thead>
   	<tr>
@@ -23,8 +34,18 @@
     </tr>
   	<?php 
   	else :
+//  	if()
+  	$first_letter = '';
   	foreach ($domains as $domain):
-  	?>
+  	  if( strtolower(substr($domain['Domain']['domain_name'],0,1)) != strtolower($first_letter) ) :
+    	  $first_letter = substr($domain['Domain']['domain_name'],0,1);
+        ?>
+      <tr class="letter" id="<?php echo strtoupper($first_letter); ?>">
+        <th colspan="3"><?php echo strtoupper($first_letter); ?></th>
+      </tr>
+      <?php
+      endif;
+      ?>
   	<tr class="vevent <?php echo (strtotime($domain['Domain']['expiry']) < mktime()) ? 'expired': 'active'; ?>">
   		<td class="summary">
   			<?php echo $this->Html->link($domain['Domain']['domain_name'], "/domains/view/".$domain['Domain']['id']); ?>
@@ -44,7 +65,8 @@
     </tbody>
   
   </table>
-</article>
+</main>
+
 <aside>
   <section class="statistics">
     <h2>Statistics</h2>
