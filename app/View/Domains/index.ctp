@@ -1,15 +1,32 @@
 <!-- File: domains/index.ctp -->
 
 <h1>My Domains</h1>
-<menu class="alpha-index">
+<menu class="shortcuts">
   <ol>
     <?php 
-    $alphas = range('A','Z');
-    foreach($alphas as $letter) :
-    ?>
-    <li><a href="#<?php echo $letter; ?>"><?php echo $letter; ?></a></li>
-    <?php
-    endforeach;
+    $order_by = 'date';
+    
+    // Alphabetical shortcut index
+    if($order_by == 'domain') {
+      $alphas = range('A','Z');
+      foreach($alphas as $letter) :
+      ?>
+      <li><a href="#<?php echo $letter; ?>"><?php echo $letter; ?></a></li>
+      <?php
+      endforeach;
+    // Timeline shortcut index
+    } else {
+      $last_month = '';
+      foreach($domains as $domain) :
+        $expires = strtotime($domain['Domain']['expiry']);
+        if( date('Y-m', $expires) != $last_month) :
+          $last_month = date('Y-m', $expires);
+        ?>
+        <li><a href="#<?php echo $last_month; ?>"><?php echo date('M Y', $expires); ?></a></li>
+        <?php
+        endif;
+      endforeach;
+    }
     ?>
   </ol>
 </menu>
@@ -34,18 +51,35 @@
     </tr>
   	<?php 
   	else :
-//  	if()
-  	$first_letter = '';
-  	foreach ($domains as $domain):
-  	  if( strtolower(substr($domain['Domain']['domain_name'],0,1)) != strtolower($first_letter) ) :
-    	  $first_letter = substr($domain['Domain']['domain_name'],0,1);
-        ?>
-      <tr class="letter" id="<?php echo strtoupper($first_letter); ?>">
-        <th colspan="3"><?php echo strtoupper($first_letter); ?></th>
-      </tr>
-      <?php
-      endif;
-      ?>
+      	foreach ($domains as $domain):
+
+          //  Alphabetical headings 
+          if($order_by == 'domain') :
+          	$first_letter = '';
+        	  if( strtolower(substr($domain['Domain']['domain_name'],0,1)) != strtolower($first_letter) ) :
+          	  $first_letter = substr($domain['Domain']['domain_name'],0,1);
+              ?>
+            <tr class="letter heading" id="<?php echo strtoupper($first_letter); ?>">
+              <th colspan="3"><?php echo strtoupper($first_letter); ?></th>
+            </tr>
+            <?php
+            endif;
+
+          //  Date headings 
+          else:
+
+            $expires = strtotime($domain['Domain']['expiry']);
+            if( !isset($this_month) || $this_month != date('Y-m', $expires) ) :
+              $this_month = date('Y-m', $expires);
+              ?>
+            <tr class="date heading" id="<?php echo $this_month; ?>">
+              <th colspan="3"><?php echo date('M Y', $expires); ?></th>
+            </tr>
+            <?php
+            endif;
+
+          endif;
+    ?>
   	<tr class="vevent <?php echo (strtotime($domain['Domain']['expiry']) < mktime()) ? 'expired': 'active'; ?>">
   		<td class="summary">
   			<?php echo $this->Html->link($domain['Domain']['domain_name'], "/domains/view/".$domain['Domain']['id']); ?>

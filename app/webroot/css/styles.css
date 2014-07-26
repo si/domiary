@@ -283,11 +283,12 @@ footer {
     footer a:hover {
       color: #e24234; }
 
-.alpha-index {
-  background: rgba(0, 0, 0, 0.1); }
-  .alpha-index ol {
+.shortcuts {
+  background: rgba(0, 0, 0, 0.1);
+  font-size: 0.8rem; }
+  .shortcuts ol {
     list-style: none; }
-    .alpha-index ol li {
+    .shortcuts ol li {
       display: inline-block; }
-      .alpha-index ol li a {
+      .shortcuts ol li a {
         padding: 0.5em 0.1em; }
