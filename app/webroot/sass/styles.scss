@@ -6,6 +6,7 @@
 @import "_grids.scss"; // lets grid this baby up.
 @import "_debug.scss"; // deeeebuuuuuuuug!
 
+@import "_sections/_users/_login";
 
 /* GENERAL STYLES ================================= */
 
@@ -115,6 +116,7 @@ h1 {
 	font-family: $headType;
 	@include font-size(32);
 	line-height: 1.5;
+	margin-bottom: 1em;
 	text-align: center;
 }
 
@@ -256,50 +258,3 @@ footer {
   }
 }
 
-$facebook : #0074cb;
-$twitter : #64CCEF;
-$google : #e55036;
-
-.login {
-
-  .providers {
-    margin: 2rem 0 2rem;
-    padding: 0;
-    text-align: center;
-    
-    li {
-      display: inline-block;
-      
-      a {
-        color: #FFF;
-        display: block;
-        padding: 1rem 2rem;
-        text-indent: -999rem;
-        transition: all 0.3s ease;
-        z-index: 5;
-        
-        &:hover {
-          opacity: 0.8;
-          z-index: 10;
-          -webkit-transform: scale(1.2);
-          -moz-transform: scale(1.2);
-        }
-        
-        &.facebook {
-          background: $facebook url(/img/svg/facebook.svg) no-repeat 50% 50%;
-          background-size: 20px 40px;
-        }
-        &.twitter {
-          background: $twitter url(/img/svg/twitter.svg) no-repeat 50% 50%;
-          background-size: 40px 40px;
-        }
-        &.google {
-          background: $google url(/img/svg/google.svg) no-repeat 50% 50%;
-          background-size: 40px 40px;
-        }
-      }
-    }
-    
-  } 
-  
-}
