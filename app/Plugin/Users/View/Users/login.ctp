@@ -1,3 +1,7 @@
+<?php
+$this->set("title_for_layout","Sign in");
+?>
+
 <div class="users index">
 	<h1><?php echo __d('users', 'Login'); ?></h1>
 	
