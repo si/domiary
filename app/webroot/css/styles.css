@@ -94,8 +94,7 @@ table {
 /* SITE STYLES ================================= */
 body {
   font-family: helvetica, sans-serif;
-  background: fixed #222222 url(/img/bokeh.jpg) no-repeat 0 0;
-  background-size: cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url(/img/bokeh.jpg) no-repeat fixed 50% 0/cover;
   color: #fefefe; }
 
 a {
@@ -292,3 +291,31 @@ footer {
       display: inline-block; }
       .shortcuts ol li a {
         padding: 0.5em 0.1em; }
+
+.login .providers {
+  margin: 2rem 0 2rem;
+  padding: 0;
+  text-align: center; }
+  .login .providers li {
+    display: inline-block; }
+    .login .providers li a {
+      color: #FFF;
+      display: block;
+      padding: 1rem 2rem;
+      text-indent: -999rem;
+      transition: all 0.3s ease;
+      z-index: 5; }
+      .login .providers li a:hover {
+        opacity: 0.8;
+        z-index: 10;
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2); }
+      .login .providers li a.facebook {
+        background: #0074cb url(/img/svg/facebook.svg) no-repeat 50% 50%;
+        background-size: 20px 40px; }
+      .login .providers li a.twitter {
+        background: #64ccef url(/img/svg/twitter.svg) no-repeat 50% 50%;
+        background-size: 40px 40px; }
+      .login .providers li a.google {
+        background: #e55036 url(/img/svg/google.svg) no-repeat 50% 50%;
+        background-size: 40px 40px; }

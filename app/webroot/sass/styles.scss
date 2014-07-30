@@ -19,8 +19,10 @@
 
 body {
 	font-family: $bodyType;
-	background: fixed #222 url(/img/bokeh.jpg) no-repeat 0 0;
-	background-size: cover;
+  background: linear-gradient(
+      rgba(0,0,0,0.4), 
+      rgba(0,0,0,0.3)
+    ), url(/img/bokeh.jpg) no-repeat fixed 50% 0 / cover;
 	color: $white;
 }
 
@@ -252,4 +254,52 @@ footer {
       }
     }
   }
+}
+
+$facebook : #0074cb;
+$twitter : #64CCEF;
+$google : #e55036;
+
+.login {
+
+  .providers {
+    margin: 2rem 0 2rem;
+    padding: 0;
+    text-align: center;
+    
+    li {
+      display: inline-block;
+      
+      a {
+        color: #FFF;
+        display: block;
+        padding: 1rem 2rem;
+        text-indent: -999rem;
+        transition: all 0.3s ease;
+        z-index: 5;
+        
+        &:hover {
+          opacity: 0.8;
+          z-index: 10;
+          -webkit-transform: scale(1.2);
+          -moz-transform: scale(1.2);
+        }
+        
+        &.facebook {
+          background: $facebook url(/img/svg/facebook.svg) no-repeat 50% 50%;
+          background-size: 20px 40px;
+        }
+        &.twitter {
+          background: $twitter url(/img/svg/twitter.svg) no-repeat 50% 50%;
+          background-size: 40px 40px;
+        }
+        &.google {
+          background: $google url(/img/svg/google.svg) no-repeat 50% 50%;
+          background-size: 40px 40px;
+        }
+      }
+    }
+    
+  } 
+  
 }
