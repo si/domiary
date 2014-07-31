@@ -22,9 +22,10 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link href='http://fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/css/styles.css?v=2">
-  <link rel="stylesheet" href="/css/shame.css">
+  
   <link rel="stylesheet" href="/css/font-awesome.min.css?v=1">
   <link rel="stylesheet" media="handheld" href="/css/handheld.css?v=2">
+  <link rel="stylesheet" href="/css/shame.css">
   <script src="/js/libs/modernizr-1.6.min.js"></script>
 </head>
   <body class="<?php echo $this->params['controller'] . ' ' . $this->params['action']; ?>">
