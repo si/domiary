@@ -31,12 +31,20 @@
   </ol>
 </menu>
 <main>
-  <table>
+  <table class="domain-list">
     <thead>
   	<tr>
-  		<th><?php echo $this->Html->link('Domain',array('action'=>'index','order/domain_name')); ?></th>
-  		<th><?php echo $this->Html->link('Expires',array('action'=>'index','order/expiry')); ?></th>
-  		<th>Actions</th>
+  		<th class="list-domain-name">
+        <?php echo $this->Html->link('Domain',array('action'=>'index','order/domain_name')); ?>
+      </th>
+  		
+      <th class="list-expiry">
+        <?php echo $this->Html->link('Expires',array('action'=>'index','order/expiry')); ?>
+      </th>
+  		
+      <th class="list-actions">
+        Actions
+      </th>
   	</tr>
     </thead>
     <tfoot>

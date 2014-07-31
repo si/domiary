@@ -12,3 +12,15 @@
   margin-bottom: 1em;
   text-align: center; }
 }
+
+.list-domain-name {
+	width: 40%;
+}
+
+.list-expiry {
+	width:30%;
+}
+
+.expiry {
+	width: 30%;
+}
