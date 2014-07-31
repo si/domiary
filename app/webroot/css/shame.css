@@ -15,12 +15,14 @@
 
 table.domain-list {
 	width:100%;
+	max-width:50em;
 }
 
 .domain-list thead {
 	font-weight: bold;
 	background-color: rgba(0,0,0,.6);
-	line-height: 2rem
+	line-height: 2rem;
+	width: 100%;
 	}
 
 .list-domain-name {
