@@ -13,13 +13,14 @@
   text-align: center; }
 }
 
-.domain-list {
+table.domain-list {
 	width:100%;
 }
 
 .domain-list thead {
 	font-weight: bold;
 	background-color: rgba(0,0,0,.6);
+	line-height: 2rem
 	}
 
 .list-domain-name {
