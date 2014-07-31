@@ -286,6 +286,8 @@ form input, form textarea {
       width: 50%;
       margin: 0.5rem auto;
       display: block; } }
+form .input {
+  margin-bottom: 1rem; }
 
 #UserAddForm ul {
   padding: 0; }
