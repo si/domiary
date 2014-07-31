@@ -1,0 +1,14 @@
+.login-list, .feature-list {
+    max-width: 50em;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+.login-list h2, .feature-list h2{
+  font-family: "Doppio One", sans-serif;
+  font-size: 20px;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  margin-bottom: 1em;
+  text-align: center; }
+}

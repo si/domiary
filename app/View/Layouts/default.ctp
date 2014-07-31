@@ -1,13 +1,13 @@
-<!doctype html>  
+<!doctype html>
 
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --> 
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
 <!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
 <!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 <head>
-  <?php 
+  <?php
   echo '<!-- ' . $_SERVER['SERVER_NAME'] . ' -->';
   if($_SERVER['SERVER_NAME']!='domiary.net') : ?>
   <meta name="robots" content="noindex,nofollow" />
@@ -22,6 +22,7 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link href='http://fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/css/styles.css?v=2">
+  <link rel="stylesheet" href="/css/shame.css">
   <link rel="stylesheet" href="/css/font-awesome.min.css?v=1">
   <link rel="stylesheet" media="handheld" href="/css/handheld.css?v=2">
   <script src="/js/libs/modernizr-1.6.min.js"></script>
@@ -34,14 +35,14 @@
     <?php echo $this->element('nav'); ?>
     <div id="content">
 
-		<?php 
-		echo $this->Session->flash(); 
+		<?php
+		echo $this->Session->flash();
 		?>
 
 		<?php echo $content_for_layout; ?>
-		
+
     </div>
-    
+
     <footer>
 		  <p id="copyright">&copy; 2008-<?php echo Date('Y'); ?> Domiary - another <a href="http://unstyled.com/">Unstyled</a> project from <a href="http://twitter.com/Si">Si</a> &amp; <a href="http://twitter.com/MrQwest">Anthony</a></p>
 		  <p id="twitter">Follow <a href="http://twitter.com/domiary">@domiary on Twitter</a> for updates</p>
@@ -54,14 +55,14 @@
   <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="js/libs/jquery-1.4.2.js"%3E%3C/script%3E'))</script>
-  
-  
+
+
   <!-- scripts concatenated and minified via ant build script-->
   <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
   <!-- end concatenated and minified scripts-->
-  
-  
+
+
   <!--[if lt IE 7 ]>
     <script src="js/libs/dd_belatedpng.js"></script>
     <script> DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images </script>
@@ -73,17 +74,17 @@
   <!-- end profiling code -->
 
 
-  <!-- asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet 
+  <!-- asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet
        change the UA-XXXXX-X to be your site's ID -->
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  
+
     ga('create', 'UA-91583-42', 'auto');
     ga('send', 'pageview');
-  
-  </script>  
+
+  </script>
 </body>
 </html>
