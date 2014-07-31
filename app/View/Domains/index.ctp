@@ -107,7 +107,6 @@
     <ul>
       <li><strong><?php echo count($domains); ?></strong> domains</li>
       <li><strong><?php echo (count($domains)>0) ? floor((strtotime($domains[0]['Domain']['expiry']) - mktime())/3600/24) : '0'; ?></strong> days until next renewal</li>
-      <li><strong>&pound;<?php echo count($domains)*6; ?>*</strong> worth of domains <small>(based on &pound;6 per domain)</small></li>
     </ul>
   </section>
   <ul class="actions">
