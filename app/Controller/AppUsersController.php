@@ -35,7 +35,7 @@ class AppUsersController extends UsersController {
 					'AppUser.active' => 1,
 					'AppUser.email_verified' => 1)));
 
-		$this->Auth->logoutRedirect = array('plugin' => null, 'controller' => 'pages', 'action' => 'display', 'home');
+		$this->Auth->logoutRedirect = array('plugin' => null, 'controller' => 'home', 'action' => 'index');
 		$this->Auth->loginAction = array('admin' => false, 'plugin' => null, 'controller' => 'app_users', 'action' => 'login');
 		$this->Auth->loginRedirect = array('plugin' => null, 'admin' => false, 'controller' => 'domains', 'action' => 'index');
 	}
