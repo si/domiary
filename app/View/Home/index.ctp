@@ -25,23 +25,23 @@ $this->pageTitle = 'Monitor domain expiry dates in your calendar with Domiary';
 	<p>Domiary is pretty slick straight out of the box; check out some of the features already baked in...</p>
 	<ul>
 		<li>
-			<h3>Domains</h3>
+			<h3><i class="fa-list"></i>Domains</h3>
 			<div>Keep track of your entire domain collection</div>
 		</li>
 		<li>
-			<h3>WHOIS</h3>
+			<h3><i class="fa-question-circle"></i>WHOIS</h3>
 			<div>Auto-lookup against domain WHOIS database</div>
 		</li>
 		<li>
-			<h3>Subscriptions</h3>
+			<h3><i class="fa-calendar-o"></i>Subscriptions</h3>
 			<div>Calendar subscriptions for Outlook and Apple iCal</div>
 		</li>
 		<li>
-			<h3>Notifications</h3>
+			<h3><i class="fa-exclamation-circle"></i>Notifications</h3>
 			<div>Email and Twitter alerts</div>
 		</li>
 		<li>
-			<h3>Stay ahead</h3>
+			<h3><i class="fa-star"></i>Stay ahead</h3>
 			<div>Never miss a domain expiry date again</div>
 		</li>
 	</ul>
