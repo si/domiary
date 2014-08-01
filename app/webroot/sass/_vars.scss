@@ -11,7 +11,7 @@
 
 // 00. debug
 
-	$debugMode: false;
+	$debug-mode: false;
 
 // 01. Sizing
 
@@ -21,13 +21,13 @@
 
 // 02. Colours
 
-	$maincol: rgb(255,190,30);
-	$seccol: #e24234;
-	$altcol: #2a7bda;
+	$main-col: rgb(255,190,30);
+	$sec-col: #e24234;
+	$alt-col: #2a7bda;
 	$white: #fefefe;
 	$black: rgba(0,0,0,0.7);
 	
 // 03. Typography
 
-	$headType: 'Doppio One', sans-serif;
-	$bodyType: helvetica, sans-serif;
+	$head-type: 'Doppio One', sans-serif;
+	$body-type: helvetica, sans-serif;
