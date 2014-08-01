@@ -25,7 +25,7 @@ $this->set("title_for_layout","Register");
 				'type' => 'password'));
 			$tosLink = $this->Html->link(__d('users', 'Terms of Service'), array('controller' => 'pages', 'action' => 'tos', 'plugin' => null));
 			echo $this->Form->input('tos', array(
-				'label' => __d('users', 'I have read and agreed to ') . $tosLink));
+				'label' => __d('users', 'I have read and agreed to the ') . $tosLink));
 			echo $this->Form->end(__d('users', 'Submit'));
 		?>
 	</fieldset>
