@@ -1,0 +1,59 @@
+@import "../_vars";
+@import "../_mq";
+
+form {
+
+	legend {
+		font-family: $head-type;
+	}
+	
+	input, select, textarea  {
+		background-color: rgba($white, 0.9);
+		border: $main-col;
+		border-radius: 0.3rem;
+		font-family: $body-type;
+		font-size: 1rem;
+		margin: 0.5rem 0;
+	  padding: 1rem;
+	  text-align: center;
+		width: 100%;
+
+		@include mq($tiny) {
+			display: block;
+			margin: 0.5rem auto;
+			width: 50%;
+		}
+	}
+	
+	label {
+		display: block;
+		padding-top: 0.5rem;
+
+		@include mq($tiny) {
+			text-align: center;
+		}
+
+	}
+	.input {
+  	margin-bottom: 1rem;
+	}
+	
+	.checkbox {
+	  margin: 0 auto 1rem;
+	  width: 50%;
+	  
+	  input {
+  	  display: inline-block;
+  	  margin: 0.6rem 1rem;
+  	  vertical-align: top;
+    	width: auto;
+    }
+    
+    label {
+      display: inline-block;
+      text-align: left;
+      width: 86%;
+    }
+	}
+	
+}
