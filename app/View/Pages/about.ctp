@@ -4,4 +4,4 @@
 
 <p>Most registrars send emails to remind you to renew them but that just clutters your inbox and often gets lost amongst all the other correspondence. We wanted a way to monitor them somewhere more appropriate &ndash; our calendar.</p>
 
-<p>With Domiary, you can track all your domain registrations and expiry dates directly in your calendar, whether that's on your desktop in Outlook, online with Google Calendar or on your smart phone.</p>
+<p>With Domiary, you can track all your domain registrations and expiry dates directly in your calendar, whether that's on your desktop in Outlook, online with <a href="http://google.com/calendar" title="Google Calendar">Google Calendar</a> or on your smart phone.</p>
