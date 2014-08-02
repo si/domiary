@@ -23,8 +23,11 @@ $this->set("title_for_layout","Register");
 			echo $this->Form->input('temppassword', array(
 				'label' => __d('users', 'Confirm Password'),
 				'type' => 'password'));
+
+			// Terms of Service link
 			$tosLink = $this->Html->link(__d('users', 'Terms of Service'), array('controller' => 'pages', 'action' => 'tos', 'plugin' => null));
 			echo $this->Form->input('tos', array(
+				'type' => 'checkbox',
 				'label' => __d('users', 'I have read and agreed to the ') . $tosLink));
 			echo $this->Form->end(__d('users', 'Submit'));
 		?>
