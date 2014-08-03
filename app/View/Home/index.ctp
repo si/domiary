@@ -38,7 +38,7 @@ $this->pageTitle = 'Monitor domain expiry dates in your calendar with Domiary';
 		</li>
 		<li>
 			<h3><i class="fa-exclamation-circle"></i>Notifications</h3>
-			<div>Email and Twitter alerts</div>
+			<div>Email and Twitter alerts<span class="label coming-soon">coming soon</span></div>
 		</li>
 		<li>
 			<h3><i class="fa-star"></i>Stay ahead</h3>

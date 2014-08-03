@@ -58,3 +58,18 @@ table.domain-list {
 	display: inline;
 	font-weight: bold;
 }
+
+.label {
+    font-style: italic;
+    border: 1px solid rgba(255,255,255,0.6);
+    padding: 0.33rem;
+    border-radius: 0.23rem;
+    margin: 0.33rem 1rem;
+    font-size: 0.8rem;
+    background-color: rgba(255,255,255,0.4);
+    color: rgba(0,0,0,0.6);
+}
+
+.coming-soon {
+    width: 8rem;
+}
