@@ -4,18 +4,19 @@ $this->pageTitle = 'Monitor domain expiry dates in your calendar with Domiary';
 
 <h1>Monitor domain expiry dates in your calendar with Domiary</h1>
 
-<p class="intro">Subscribe to your calendar of domain name expiry dates in your own calendar software, whether it's <strong>Outlook&reg;</strong>, <strong>iCal&reg;</strong>, <strong>Sunbird</strong> or even your <strong>iPhone&trade;</strong> or <strong>Blackberry&trade;</strong>.</p>
+<p class="intro">Domiary tracks your domain names and creates your own personal calendar of expiry dates; never let a domain name lapse again!</p>
+<p class="intro">Subscribe to your own calendar on your smart phone (iPhone, Android, Blackberry &amp; Windows Phone), Outlook, iCal, Google Calendar... in fact, anywhere that supports calendar subscriptions.</p>
 
 
 <?php if(!isset($_SESSION['Auth']['User'])) : ?>
 <section class="login-list">
 	<h2>Sign In</h2>
 	<p>Domiary is free to use, all you need to do is sign in using one of your <em>awesome</em> social accounts and we'll take care of the rest.</p>
-	<ul>
-		<li><?php echo $this->Html->link('Twitter', array('controller'=>'auth_login','action'=>'twitter'), array('class'=>'twitter')); ?></li>
-		<li><?php echo $this->Html->link('Facebook', array('controller'=>'auth_login','action'=>'facebook'), array('class'=>'facebook')); ?></li>
-		<li><?php echo $this->Html->link('Google', array('controller'=>'auth_login','action'=>'google'), array('class'=>'google')); ?></li>
-		<li><?php echo $this->Html->link('Email', array('controller'=>'users','action'=>'login'), array('class'=>'email')); ?></li>
+	<ul class="social-login-list">
+		<li><i class="fa-twitter-square"></i> <?php echo $this->Html->link('Twitter', array('controller'=>'auth_login','action'=>'twitter'), array('class'=>'twitter')); ?></li>
+		<li><i class="fa-facebook-square"></i> <?php echo $this->Html->link('Facebook', array('controller'=>'auth_login','action'=>'facebook'), array('class'=>'facebook')); ?></li>
+		<li><i class="fa-google-plus-square"></i> <?php echo $this->Html->link('Google', array('controller'=>'auth_login','action'=>'google'), array('class'=>'google')); ?></li>
+		<li><i class="fa-circle"></i> <?php echo $this->Html->link('Email', array('controller'=>'users','action'=>'login'), array('class'=>'email')); ?></li>
 	</ul>
 </section>
 <?php endif; ?>
