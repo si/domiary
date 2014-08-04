@@ -281,7 +281,10 @@ h1 {
   width: 22.3%;
   background-color: rgba(255, 255, 255, 0.3);
   text-align: center;
-  border-radius: 0.33rem; }
+  border-radius: 0.33rem;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out; }
   .social-login-list li:hover {
     background-color: rgba(255, 255, 255, 0.9); }
   .social-login-list li a {
