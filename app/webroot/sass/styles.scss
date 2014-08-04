@@ -122,6 +122,83 @@ h1 {
 	text-align: center;
 }
 
+// logins & features for front page
+.login-list, .feature-list {
+    max-width: 50em;
+    margin: 0 auto;
+    padding: 1rem 0;
+    h2 {
+    	font-family: "Doppio One", sans-serif;
+		font-size: 20px;
+		font-size: 1.5rem;
+		line-height: 1.5;
+		margin-bottom: 1em;
+		text-align: center;
+    }
+}
+
+// domain lists on dashboard
+.domain-list {
+	width:100%;
+	max-width:50em;
+	thead {
+		font-weight: bold;
+		background-color: rgba(0,0,0,.6);
+		line-height: 2rem;
+		width: 100%;
+	}
+	.list-domain-name {
+		width: 40%;
+	}
+
+	.list-expiry {
+		width:30%;
+	}
+
+	.expiry {
+		width: 30%;
+	}
+}
+
+// social log in to home page
+
+.social-login-list li {
+    list-style: none;
+    display: inline-block;
+    width: 22.3%;
+    background-color: rgba(255,255,255,0.3);
+    text-align: center;
+    border-radius: 0.33rem;
+    &:hover {
+    	background-color: rgba(255,255,255,0.9);
+    }
+	a {
+    	color: rgba(0,0,0,0.7);
+	}
+}
+
+// featurelist to home page
+
+.feature-list ul {
+	margin: 0;
+	padding: 0;
+	li {
+		display: inline-block;
+		width: 47%;
+		margin: 0 0 1rem;
+		padding: 1rem!important;
+		text-align: center;
+		background-color: rgba(255,255,255,.3);
+		border-radius: 0.5rem;
+		min-height:3rem;
+		vertical-align: top;
+	}
+	h3 {
+		display: inline;
+		font-weight: bold;
+	}
+}
+
 .cta {
     background-color: $main-col;
     text-decoration: none;
@@ -143,6 +220,22 @@ h1 {
     &:hover {
     	background-color: lighten($main-col, 20);
     }
+}
+
+// label set up
+.label {
+    font-style: italic;
+    border: 1px solid rgba(255,255,255,0.6);
+    padding: 0.33rem;
+    border-radius: 0.23rem;
+    margin: 0.33rem 1rem;
+    font-size: 0.8rem;
+    background-color: rgba(255,255,255,0.4);
+    color: rgba(0,0,0,0.6);
+}
+
+.coming-soon {
+    width: 8rem;
 }
 
 #content {
