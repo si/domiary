@@ -10,6 +10,9 @@ app/tmp/tests/*
 app/[Cc]onfig/database.php
 app/Config/app_secrets.php
 .sass-cache
+mixture.json
+.filewatching
+app/webroot/sass/css/style.min.css
 
 !empty
 
