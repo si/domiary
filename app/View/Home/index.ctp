@@ -2,7 +2,7 @@
 $this->pageTitle = 'Monitor domain expiry dates in your calendar with Domiary';
 ?>
 
-<h1>Monitor domain expiry dates in your calendar with Domiary</h1>
+<h1>Monitor domains in your calendar with Domiary</h1>
 
 <p class="intro">Domiary tracks your domain names and creates your own personal calendar of expiry dates; never let a domain name lapse again!</p>
 <p class="intro">Subscribe to your own calendar on your smart phone (iPhone, Android, Blackberry &amp; Windows Phone), Outlook, iCal, Google Calendar... in fact, anywhere that supports calendar subscriptions.</p>
