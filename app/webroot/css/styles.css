@@ -85,6 +85,19 @@ table {
       float: right; } }
 
 /* endif */
+.cake-sql-log {
+  background: #000;
+  font-size: 0.8rem;
+  width: 100%; }
+  .cake-sql-log caption {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 0.5rem;
+    text-transform: uppercase; }
+  .cake-sql-log tr {
+    display: none; }
+  .cake-sql-log th, .cake-sql-log td {
+    padding: 0.5rem; }
+
 .action {
   background: #00ccff;
   border: none;
