@@ -38,7 +38,7 @@
 
 		<?php
 		echo $this->Session->flash();
-		?>
+    ?>
 
 		<?php echo $content_for_layout; ?>
 
@@ -89,3 +89,4 @@
   </script>
 </body>
 </html>
+<?php echo $this->element('sql_dump'); ?>

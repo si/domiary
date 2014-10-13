@@ -14,8 +14,8 @@ form {
 		font-family: $body-type;
 		font-size: 1rem;
 		margin: 0.5rem 0;
-	  padding: 1rem;
-	  text-align: center;
+		padding: 1rem;
+		text-align: center;
 		width: 100%;
 
 		@include mq($tiny) {
@@ -32,28 +32,34 @@ form {
 		@include mq($tiny) {
 			text-align: center;
 		}
-
 	}
+
+	.submit input,
+	button {
+		cursor: pointer;
+		display: block;
+		@include button();
+	}
+
 	.input {
-  	margin-bottom: 1rem;
+  		margin-bottom: 1rem;
 	}
 	
 	.checkbox {
-	  margin: 0 auto 1rem;
-	  width: 50%;
+		margin: 0 auto 1rem;
+		width: 50%;
 	  
-	  input {
-  	  display: inline-block;
-  	  margin: 0.6rem 1rem;
-  	  vertical-align: top;
-    	width: auto;
-    }
-    
-    label {
-      display: inline-block;
-      text-align: left;
-      width: 86%;
-    }
+		input {
+			display: inline-block;
+			margin: 0.6rem 1rem;
+			vertical-align: top;
+			width: auto;
+		}
+
+		label {
+			display: inline-block;
+			text-align: left;
+			width: 86%;
+		}
 	}
-	
 }

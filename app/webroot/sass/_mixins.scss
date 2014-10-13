@@ -1,3 +1,5 @@
+
+
 // =====================================
 //    Mixins
 // -------------------------------------
@@ -99,6 +101,28 @@
 }
 
 @mixin font-size($size) {
-  font-size: 0px + $size;
-  font-size: 0rem + $size / $font-size;
+    font-size: 0px + $size;
+    font-size: 0rem + $size / $font-size;
 }
+
+@mixin button($color:#FC0) {
+    background: $color;
+    border: none;
+    color: #000;
+    display: block;
+    font-family: $body-type;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    padding: 1rem;
+    margin: 0.5rem auto 1rem;
+    opacity: 0.9;
+    text-align: center;
+    text-transform: uppercase;
+    width: 90%;
+
+    &:hover, &:focus {
+        color: #000;
+        opacity: 1;
+    }
+}
+

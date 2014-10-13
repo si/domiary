@@ -1,0 +1,6 @@
+@import "../_vars";
+@import "../_mq";
+
+.action {
+	@include button(#0CF);
+}

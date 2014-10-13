@@ -85,6 +85,24 @@ table {
       float: right; } }
 
 /* endif */
+.action {
+  background: #00ccff;
+  border: none;
+  color: #000;
+  display: block;
+  font-family: helvetica, sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  padding: 1rem;
+  margin: 0.5rem auto 1rem;
+  opacity: 0.9;
+  text-align: center;
+  text-transform: uppercase;
+  width: 90%; }
+  .action:hover, .action:focus {
+    color: #000;
+    opacity: 1; }
+
 form legend {
   font-family: "Doppio One", sans-serif; }
 form input, form select, form textarea {
@@ -108,6 +126,28 @@ form label {
   @media screen and (min-width: 20em) {
     form label {
       text-align: center; } }
+form .submit input,
+form button {
+  cursor: pointer;
+  display: block;
+  background: #ffcc00;
+  border: none;
+  color: #000;
+  display: block;
+  font-family: helvetica, sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  padding: 1rem;
+  margin: 0.5rem auto 1rem;
+  opacity: 0.9;
+  text-align: center;
+  text-transform: uppercase;
+  width: 90%; }
+  form .submit input:hover, form .submit input:focus,
+  form button:hover,
+  form button:focus {
+    color: #000;
+    opacity: 1; }
 form .input {
   margin-bottom: 1rem; }
 form .checkbox {
@@ -123,31 +163,34 @@ form .checkbox {
     text-align: left;
     width: 86%; }
 
-.login .providers {
+.users h2 {
+  margin-bottom: 1rem;
+  text-align: center; }
+.users .providers {
   margin: 2rem 0 2rem;
   padding: 0;
   text-align: center; }
-  .login .providers li {
+  .users .providers li {
     display: inline-block; }
-    .login .providers li a {
+    .users .providers li a {
       color: #FFF;
       display: block;
       padding: 1rem 2rem;
       text-indent: -999rem;
       transition: all 0.3s ease;
       z-index: 5; }
-      .login .providers li a:hover {
+      .users .providers li a:hover {
         opacity: 0.8;
         z-index: 10;
         -webkit-transform: scale(1.2);
         -moz-transform: scale(1.2); }
-      .login .providers li a.facebook {
+      .users .providers li a.facebook {
         background: #0074cb url(/img/svg/facebook.svg) no-repeat 50% 50%;
         background-size: 20px 40px; }
-      .login .providers li a.twitter {
+      .users .providers li a.twitter {
         background: #64ccef url(/img/svg/twitter.svg) no-repeat 50% 50%;
         background-size: 40px 40px; }
-      .login .providers li a.google {
+      .users .providers li a.google {
         background: #e55036 url(/img/svg/google.svg) no-repeat 50% 50%;
         background-size: 40px 40px; }
 

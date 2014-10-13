@@ -2,7 +2,12 @@ $facebook : #0074cb;
 $twitter : #64CCEF;
 $google : #e55036;
 
-.login {
+.users {
+
+  h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
 
   .providers {
     margin: 2rem 0 2rem;

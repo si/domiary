@@ -39,9 +39,9 @@ $this->set("title_for_layout","Sign in");
   			echo $this->Form->input('remember_me', array('type' => 'checkbox', 'label' =>  __d('users', 'Remember Me')));
   			echo $this->Form->button(__d('users','Sign in'));
 
-        echo $this->Html->link(__d('users', 'I forgot my password'), array('action' => 'reset_password'));
+        echo $this->Html->link(__d('users', 'I forgot my password'), array('action' => 'reset_password'), array('class'=>'action'));
 
-			echo " or " . $this->Html->link(__d('users', 'Register for a new account'), array('action' => 'add'));
+			  echo $this->Html->link(__d('users', 'Register for a new account'), array('action' => 'add'), array('class'=>'action'));
         ?>
     </fieldset>
     <?php
